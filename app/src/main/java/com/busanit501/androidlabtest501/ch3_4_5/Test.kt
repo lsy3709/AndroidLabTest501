@@ -7,4 +7,4 @@ fun main() {
     val name = "이상용"
     println("이름 : " + name)
 }
-//변경 테스트
+//변경 테스트2
