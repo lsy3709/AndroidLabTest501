@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TestActivity">
+    <!--    수평,수직 방향중 반드시 택 하기-->
+<!--    반드시 설정,  android:orientation="vertical" , 또는 horizontal-->
+    <Button
+        android:id="@+id/exBtn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼1"/>
+
+    <Button
+        android:id="@+id/exBtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼2"/>
+
+</LinearLayout>
