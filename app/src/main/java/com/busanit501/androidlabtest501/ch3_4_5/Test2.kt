@@ -34,6 +34,12 @@ open class Super(name:String) {
     init {
         println("Super 클래스의 주생성자 실행 부분")
     }
+    var name = ""
+    open var data1 = 30
+    open fun exFun() {
+        println("exFun() 함수 실행 : data1 : ${data1}, name: ${name}" )
+    }
+
 } // Super
 
 //class Sub(name: String) : Super(name){
@@ -45,6 +51,18 @@ class Sub : Super{ // 자식 클래스에서 , 주생성자가 없음.
     constructor(name: String) : super(name){
         println("Sub 클래스의 보조 생성자 실행 부분")
     }
+}
+
+class Sub2:Super(name) {
+    init {
+        println("Sub2 클래스의  주 생성자 실행 부분")
+    }
+    override var data1 =100
+    override fun exFun() {
+        super.exFun()
+        println("재정의한 함수 호출 :  ${data1}, name : ${name}")
+    }
+
 }
 
 
