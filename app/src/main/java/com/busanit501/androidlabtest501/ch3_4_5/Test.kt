@@ -85,7 +85,15 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
     // 가변, 앞에 mutable 접두어 있음.
     var mutableList1 = mutableListOf<Int>(1,2,3)
     var mutableList2 = mutableListOf<String>("1","2","3")
-//    mutableList2.add(4,"4")
+    mutableList1.add(4)
+    mutableList1.add(4,100)
+    mutableList2.add("100")
+    mutableList2.add(4,"200")
+    println("""
+        확인, ${mutableList1}
+        확인2, ${mutableList2}
+        확인3, ${mutableList2.get(3)}
+    """.trimIndent())
 
     // Map ,고정 길이
     var map1 = mapOf<String,String>(Pair("1","one"), Pair("2","two"), "3" to "three")
