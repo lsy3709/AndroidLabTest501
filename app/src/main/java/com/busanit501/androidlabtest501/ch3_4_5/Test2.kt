@@ -1,6 +1,5 @@
 package com.busanit501.androidlabtest501.ch3_4_5
 
-import com.busanit501.androidlabtest501.ch3_4_5.DataClass.SuperClass
 
 class Test2 {
 }
@@ -93,17 +92,26 @@ data class DataClass(val name: String, val age: Int) {
         this.email = email
     }
 
-    //익명 클래스
-
-    open class SuperClass {
-        open var data = 10
-        open fun ex() {
-            println("SuperClass 호출 ex() :  $data")
-        }
-    }
-
 }
 
+//익명 클래스
+
+open class SuperClass2 {
+    open var data = 10
+    open fun ex() {
+        println("SuperClass 호출 ex() :  $data")
+    }
+}
+
+// companion 클래스, 클래스이름으로 멤버, 함수 접근하기.
+class MyClass {
+    companion object {
+        var data = 100
+        fun ex2() {
+            println(data)
+        }
+    }
+}
 
 fun main() {
 //    val lsy = User("이상용", 30,"lsy@naver.com")
@@ -135,14 +143,23 @@ fun main() {
 //    println("non1 toString() : ${non1.toString()}, dataClass1 toString() : ${dataClass1.toString()} " )
 
     // 익명 클래스 만들기. object 이용, 상속 및 , 타입 지정하기.
-    val obj = object : SuperClass() {
+    val obj = object : SuperClass2() {
         override var  data = 100
         override fun ex() {
             println("익명 클래스에서, ex() 재정의 호출 : $data")
         }
     }
-    obj.data = 200
-    obj.ex()
+
+    // 익명클래스 이용
+//    obj.data = 200
+//    obj.ex()
+
+    // companion 클래스, 클래스명으로 접근하기.
+    val result = MyClass.data
+    println("result : $result")
+    MyClass.ex2()
+
+
 
 
 }
