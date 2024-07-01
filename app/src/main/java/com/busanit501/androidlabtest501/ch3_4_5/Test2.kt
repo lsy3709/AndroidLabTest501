@@ -81,7 +81,16 @@ class Sub3: Super(name) {
 // data 클래스 확인,
 class NonDataClass(val name: String, val age: Int)
 
-data class DataClass(val name: String, val age: Int)
+data class DataClass(val name: String, val age: Int) {
+    lateinit var email : String
+    init {
+        println("주생성자 호출시 실행되는 영역")
+    }
+    constructor(name: String,age: Int, email: String): this(name,age){
+        println("보조 생성자 호출시 실행되는 영역")
+        this.email = email
+    }
+}
 
 
 fun main() {
@@ -104,9 +113,13 @@ fun main() {
     val dataClass1 = DataClass("이상용",30)
     val dataClass2 = DataClass("이상용",30)
 
-    println("non data class equals non1.equals(non2) : ${non1.equals(non2)}")
-    println("data class equals dataClass1.equals(dataClass2) : ${dataClass1.equals(dataClass2)}")
 
+//    println("non data class equals non1.equals(non2) : ${non1.equals(non2)}")
+//    println("data class equals dataClass1.equals(dataClass2) : ${dataClass1.equals(dataClass2)}")
+
+    val testData1 = DataClass("이상용",30,"lsy@naver.com")
+    val testData2 = DataClass("이상용",30,"lsy2@naver.com")
+    println("data class equals testData1.equals(testData2) : ${testData1.equals(testData2)}")
 
 
 }
