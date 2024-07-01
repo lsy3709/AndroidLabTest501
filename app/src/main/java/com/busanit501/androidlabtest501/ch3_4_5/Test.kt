@@ -65,7 +65,8 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
     data3.set(2,"lsy3")
     // 가져오기, get
     println("data3 배열 가져오기 테스트 : 사이즈 : ${data3.size}, data[0] : ${data3[0]}" +
-            "data3.get(1) : ${data3.get(1)}")
+            ", data3.get(1) : ${data3.get(1)}")
+    //깃 테스트
 
 
 }
