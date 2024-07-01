@@ -49,5 +49,24 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
 //    println(data2)
     println("힘이 없네, 잠도 오고, 잠이 계속 오네 어쩌지, ㅠㅠ, 그냥 이야기함,오해 금지 :$data2")
 
+    fun showLunchMember(member : String) : String {
+        val lunchMemberParty : String = "이상용"
+        return "$lunchMemberParty, $member"
+    }
+//     val lunchMemberParty = showLunchMember("재범쌤 , 동진쌤")
+    val lunchMemberParty = showLunchMember("")
+//    println("오늘 점심 누구랑 먹지 : $lunchMemberParty" )
+
+    //배열 만들기
+    // 담기, set
+    val data3 : Array<String> = Array(3,{""})
+    data3[0] = "lsy1"
+    data3[1] = "lsy2"
+    data3.set(2,"lsy3")
+    // 가져오기, get
+    println("data3 배열 가져오기 테스트 : 사이즈 : ${data3.size}, data[0] : ${data3[0]}" +
+            "data3.get(1) : ${data3.get(1)}")
+
+
 }
 //변경 테스트23
