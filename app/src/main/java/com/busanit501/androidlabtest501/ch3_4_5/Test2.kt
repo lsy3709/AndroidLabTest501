@@ -36,9 +36,14 @@ open class Super(name:String) {
     }
 } // Super
 
-class Sub(name: String) : Super(name){
+//class Sub(name: String) : Super(name){
+class Sub : Super{ // 자식 클래스에서 , 주생성자가 없음.
     init {
         println("Sub 클래스의 주생성자 실행 부분")
+    }
+
+    constructor(name: String) : super(name){
+        println("Sub 클래스의 보조 생성자 실행 부분")
     }
 }
 
