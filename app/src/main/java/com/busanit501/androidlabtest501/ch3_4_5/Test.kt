@@ -14,6 +14,8 @@ var menu = "국수"
 // var 만, 기본형 타입 안됨.
 lateinit var name6:String
 
+val name7 : Int? = null
+
 //늦게 초기화 놀이 2,
 // lazy 뒤에 블록 부분은, 해당 상수가 최초로 이용 될 때, 사용됨.
 val  data : String by lazy {
@@ -31,7 +33,21 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
 //    name2 = "오늘점심"
     println("by lazy 테스트")
     println(data)
-
+    // 모든 타입이 객체이다.
+//    name7.
+    val data2: String = """
+        안녕하세요,
+        월요일입니다.
+        힘내서 할까요?
+        힘이 안나죠? 
+        배도 고프고, 그죠?
+        집에도 가고 싶고, 
+        돈도 벌어야 하고, 
+        놀기도 하고, 
+        누구는 여름철 휴가 간다고 하던데, 나는? 
+    """.trimIndent()
+//    println(data2)
+    println("힘이 없네, 잠도 오고, 잠이 계속 오네 어쩌지, ㅠㅠ, 그냥 이야기함,오해 금지 :$data2")
 
 }
 //변경 테스트23
