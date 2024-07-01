@@ -110,5 +110,78 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
         }
     }
 
+    var data4 = "1"
+    when(data4) {
+        "1" -> println("1번 국수")
+        "2" -> println("2번 국밥")
+        else -> {
+            println("기본 된장찌개 ")
+        }
+    }
+
+    var data5:Any = 123
+    when(data5) {
+        is String -> println(" 문자열 타입입니다.")
+        20,30 -> println("20,30 번의 숫자 타입입니다.")
+        in 1..10 -> println("1이상, 10이하의 숫자 타입입니다.")
+        else -> {
+            println("해당 범위에 없는 타입입니다. ")
+        }
+    }
+
+    //when 이용해서, 표현식으로 사용하기.
+    var data6 = 100
+    val result = when {
+        data6 <= 0 -> "데이터는 0 이하입니다."
+        data6 >= 10 -> "데이터는 10 이상입니다."
+        else -> {
+            "지정됨 범위의 타입이 아닙니다."
+        }
+    }
+    println("result : ${result}")
+
+
+    //for
+    var sum:Int = 0
+    for(i in 1..3){
+        sum += i
+    }
+    println("sum : $sum")
+
+    var sum2:Int = 0
+    for(i in 1..10 step 2){
+        sum2 += i
+    }
+    println("sum2 : $sum2")
+
+    var sum3:Int = 0
+    for(i in 1 until 3){
+        sum3 += i
+    }
+    println("sum3 : $sum3")
+
+    var sum4:Int = 0
+    for(i in 10 downTo  8){
+        sum4 += i
+    }
+    println("sum4 : $sum4")
+
+
+    var data7 = arrayOf<Int>(1,2,3)
+    for (i in data7.indices) {
+        print(data7[i])
+        if ( i !== data7.size - 1) {
+            print(",")
+        }
+    }
+println()
+    var data8 = arrayOf<Int>(1,2,3)
+    for ((index, value )in data8.withIndex()) {
+        print("data8의 index : data8[index] : ${index} : ${data8[index]}")
+        if ( index !== data8.size - 1) {
+            print(",")
+        }
+    }
+
 }
 //변경 테스트23
