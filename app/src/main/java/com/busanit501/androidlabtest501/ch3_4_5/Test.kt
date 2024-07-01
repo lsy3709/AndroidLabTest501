@@ -166,5 +166,22 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
     }
     println("sum4 : $sum4")
 
+
+    var data7 = arrayOf<Int>(1,2,3)
+    for (i in data7.indices) {
+        print(data7[i])
+        if ( i !== data7.size - 1) {
+            print(",")
+        }
+    }
+println()
+    var data8 = arrayOf<Int>(1,2,3)
+    for ((index, value )in data8.withIndex()) {
+        print("data8의 index : data8[index] : ${index} : ${data8[index]}")
+        if ( index !== data8.size - 1) {
+            print(",")
+        }
+    }
+
 }
 //변경 테스트23
