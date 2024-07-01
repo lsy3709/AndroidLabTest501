@@ -1,5 +1,7 @@
 package com.busanit501.androidlabtest501.ch3_4_5
 
+import com.busanit501.androidlabtest501.ch3_4_5.DataClass.SuperClass
+
 class Test2 {
 }
 //class User constructor(name:String, age:Int){
@@ -90,6 +92,16 @@ data class DataClass(val name: String, val age: Int) {
         println("보조 생성자 호출시 실행되는 영역")
         this.email = email
     }
+
+    //익명 클래스
+
+    open class SuperClass {
+        open var data = 10
+        open fun ex() {
+            println("SuperClass 호출 ex() :  $data")
+        }
+    }
+
 }
 
 
@@ -119,7 +131,18 @@ fun main() {
 
     val testData1 = DataClass("이상용",30,"lsy@naver.com")
     val testData2 = DataClass("이상용",30,"lsy2@naver.com")
-    println("data class equals testData1.equals(testData2) : ${testData1.equals(testData2)}")
+//    println("data class equals testData1.equals(testData2) : ${testData1.equals(testData2)}")
+//    println("non1 toString() : ${non1.toString()}, dataClass1 toString() : ${dataClass1.toString()} " )
+
+    // 익명 클래스 만들기. object 이용, 상속 및 , 타입 지정하기.
+    val obj = object : SuperClass() {
+        override var  data = 100
+        override fun ex() {
+            println("익명 클래스에서, ex() 재정의 호출 : $data")
+        }
+    }
+    obj.data = 200
+    obj.ex()
 
 
 }
