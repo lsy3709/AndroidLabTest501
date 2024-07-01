@@ -34,10 +34,15 @@ open class Super(name:String) {
     init {
         println("Super 클래스의 주생성자 실행 부분")
     }
+    //접근 지정자 확인 테스트.
+    var publicData = 10
+    protected var protectedData = 20
+    private  var privateDate = 30
+
     var name = ""
     open var data1 = 30
     open fun exFun() {
-        println("exFun() 함수 실행 : data1 : ${data1}, name: ${name}" )
+        println("Super exFun() 함수 실행 : data1 : ${data1}, name: ${name}" )
     }
 
 } // Super
@@ -59,17 +64,48 @@ class Sub2:Super(name) {
     }
     override var data1 =100
     override fun exFun() {
-        super.exFun()
+//        super.exFun()
         println("재정의한 함수 호출 :  ${data1}, name : ${name}")
     }
 
 }
 
+class Sub3: Super(name) {
+    fun sampleFun() {
+        publicData++
+        protectedData++
+        //privateData++
+    }
+}
+
+// data 클래스 확인,
+class NonDataClass(val name: String, val age: Int)
+
+data class DataClass(val name: String, val age: Int)
+
 
 fun main() {
 //    val lsy = User("이상용", 30,"lsy@naver.com")
-    val test = Sub("이상용")
+//    val test = Sub("이상용")
+//    val test = Sub2()
+//    test.exFun()
 //    lsy.exFun()
+//    val obj = Super("lsy")
+//    obj.publicData
+//
+//    val obj2 = Sub3()
+//    obj2.publicData
+//    obj2.protectedData
+
+    // data vs NonData class
+    val non1 = NonDataClass("이상용",30)
+    val non2 = NonDataClass("이상용",30)
+
+    val dataClass1 = DataClass("이상용",30)
+    val dataClass2 = DataClass("이상용",30)
+
+    println("non data class equals non1.equals(non2) : ${non1.equals(non2)}")
+    println("data class equals dataClass1.equals(dataClass2) : ${dataClass1.equals(dataClass2)}")
 
 
 
