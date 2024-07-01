@@ -24,11 +24,28 @@ class User(name: String){
     fun exFun() {
         // 다른 함수 내부에서는 사용이 불가.
 //        println("exFun 안에서 사용 name : ${nameTest2}, age : ${ageTest2}")
+    } //exFun
+
+} // User
+
+//상속
+open class Super(name:String) {
+
+    init {
+        println("Super 클래스의 주생성자 실행 부분")
+    }
+} // Super
+
+class Sub(name: String) : Super(name){
+    init {
+        println("Sub 클래스의 주생성자 실행 부분")
     }
 }
 
+
 fun main() {
-    val lsy = User("이상용", 30,"lsy@naver.com")
+//    val lsy = User("이상용", 30,"lsy@naver.com")
+    val test = Sub("이상용")
 //    lsy.exFun()
 
 
