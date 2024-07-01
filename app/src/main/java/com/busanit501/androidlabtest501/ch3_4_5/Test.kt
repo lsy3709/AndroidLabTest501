@@ -49,5 +49,66 @@ fun main() { // 선언만 해도 가능. 초기화를 조금 늦게 해도 됨.
 //    println(data2)
     println("힘이 없네, 잠도 오고, 잠이 계속 오네 어쩌지, ㅠㅠ, 그냥 이야기함,오해 금지 :$data2")
 
+    fun showLunchMember(member : String) : String {
+        val lunchMemberParty : String = "이상용"
+        return "$lunchMemberParty, $member"
+    }
+//     val lunchMemberParty = showLunchMember("재범쌤 , 동진쌤")
+    val lunchMemberParty = showLunchMember("")
+//    println("오늘 점심 누구랑 먹지 : $lunchMemberParty" )
+
+    //배열 만들기
+    // 담기, set
+    val data3 : Array<String> = Array(3,{""})
+    data3[0] = "lsy1"
+    data3[1] = "lsy2"
+    data3.set(2,"lsy3")
+    // 가져오기, get
+    println("data3 배열 가져오기 테스트 : 사이즈 : ${data3.size}, data[0] : ${data3[0]}" +
+            ", data3.get(1) : ${data3.get(1)}")
+    //깃 테스트2, 새롭게 포크 후 확인
+
+    // 배열에서, 기본형 선언시, 선언과 할당 동시에, 기초 타입의 배열을 생성하기.
+    val arrayData2 = intArrayOf(1,2,3)
+    val arrayData3 = booleanArrayOf(true,false,true)
+
+    //
+    val arrayData4 = arrayOf<String>("국수","국밥","된장찌개")
+    val arrayData5 = arrayOf<Int>(1,2,3)
+
+    //List, Set, Map, 2가지 , 고정, 가변
+    // 고정
+    //
+    var list1 = listOf<Int>(1,2,3)
+    var list2 = listOf<String>("1","2","3")
+
+    // 가변, 앞에 mutable 접두어 있음.
+    var mutableList1 = mutableListOf<Int>(1,2,3)
+    var mutableList2 = mutableListOf<String>("1","2","3")
+    mutableList1.add(4)
+    mutableList1.add(4,100)
+    mutableList2.add("100")
+    mutableList2.add(4,"200")
+    println("""
+        확인, ${mutableList1}
+        확인2, ${mutableList2}
+        확인3, ${mutableList2.get(3)}
+    """.trimIndent())
+
+    // Map ,고정 길이
+    var map1 = mapOf<String,String>(Pair("1","one"), Pair("2","two"), "3" to "three")
+    // 가변 길이.
+    var mutableMap1 = mutableMapOf<String,String>(Pair("1","one"), Pair("2","two"), "3" to "three")
+
+//when
+    var data = 1
+    when(data) {
+        1 -> println("1번 국수")
+        2 -> println("2번 국밥")
+        else -> {
+            println("기본 된장찌개 ")
+        }
+    }
+
 }
 //변경 테스트23
