@@ -23,7 +23,7 @@ class Login {
             val userMember: kdk1115_mini? = userMap.get(mid)
             //kdk1115_mini의 mid와 user안에 있는 mid가 일치하고,
             //kdk1115_mini의 mpw와 user안에 있는 mpw가 일치하면
-            //로그인 성공,
+            //로그인 성공,ㅎㅎ
             //일치하지 않으면 로그인 실패
             if(mid.equals(userMember?.mid) && mpw.equals(userMember?.mpw)) {
                 println("로그인 성공, ${userMember?.mid}님 환영합니다.")

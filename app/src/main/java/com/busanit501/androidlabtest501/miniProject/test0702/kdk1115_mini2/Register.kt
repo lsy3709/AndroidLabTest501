@@ -17,7 +17,7 @@ class Register {
         //입력받은 mid를 user에 담아
         val user = userMap.containsKey(mid)
 
-        //있다면 중복된 아이디입니다 출력 후 kdk1115_mini를 null로 리턴
+        //있다면 중복된 아이디입니다 출력 후 kdk1115_mini를 null로 리턴ㅎㅎ
         if(user){
             println("중복된 아이디입니다.")
             return null
