@@ -1,6 +1,7 @@
 package com.busanit501.androidlabtest501.ch06
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +34,8 @@ class Ch6MainActivity : AppCompatActivity() {
         // 샘플 버튼 클릭시 이벤트 처리,
         val sampleBtn : Button = findViewById<Button>(R.id.sampleBtn1)
         sampleBtn.setOnClickListener {
-            println("sampleBtn 클릭 확인.")
+//            println("sampleBtn 클릭 확인.")
+            Log.d("Ch6MainActivity","sampleBtn 클릭 확인.")
         }
 
     }
