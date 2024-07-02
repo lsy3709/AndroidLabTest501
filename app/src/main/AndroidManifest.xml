@@ -13,9 +13,11 @@
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
         <activity
-            android:name=".ch06.Ch6MainActivity"
+            android:name=".ch06.Ch06TestActivity"
             android:exported="true" />
-        <!-- 다른 화면을 따로 실행하고 싶으면, -->
+        <activity
+            android:name=".ch06.Ch6MainActivity"
+            android:exported="true" /> <!-- 다른 화면을 따로 실행하고 싶으면, -->
         <!-- TestActivity 우클릭 하고 따로 실행. 주의사항, -->
         <!-- exported="true" 변경, 각각 실행됨. -->
         <activity
