@@ -7,14 +7,14 @@ class Register {
     private val scanner = Scanner(System.`in`)
 
     fun registerUser(userMap: MutableMap<String, UserOhj0106>): UserOhj0106? {
-        //id,pw,email을 받고 user에 담는다
+        //id,pw,email을 받고
         println("Id:")
         val Id = scanner.nextLine()
         println("Pw:")
         val Pw = scanner.nextLine()
         println("EMAIL:")
         val Email = scanner.nextLine()
-
+        //userMap에 Id키가 있는지 확인
         val user = userMap.containsKey(Id)
 
         //만약 아이디가 중복이면 널로 보낸다
