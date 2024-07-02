@@ -12,13 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
-<!--        다른 화면을 따로 실행하고 싶으면,-->
-<!--        TestActivity 우클릭 하고 따로 실행. 주의사항,-->
-<!--        exported="true" 변경, 각각 실행됨. -->
+        <activity
+            android:name=".ch06.Ch6MainActivity"
+            android:exported="true" />
+        <!-- 다른 화면을 따로 실행하고 싶으면, -->
+        <!-- TestActivity 우클릭 하고 따로 실행. 주의사항, -->
+        <!-- exported="true" 변경, 각각 실행됨. -->
         <activity
             android:name=".TestActivity"
-            android:exported="true" />
-<!--        앱을 만들면, 기본 MainActivity 시작화면으로 지정.-->
+            android:exported="true" /> <!-- 앱을 만들면, 기본 MainActivity 시작화면으로 지정. -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
