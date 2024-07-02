@@ -3,6 +3,7 @@ package com.busanit501.androidlabtest501.ch06
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -36,6 +37,7 @@ class Ch6MainActivity : AppCompatActivity() {
         sampleBtn.setOnClickListener {
 //            println("sampleBtn 클릭 확인.")
             Log.d("Ch6MainActivity","sampleBtn 클릭 확인.")
+            Toast.makeText(this@Ch6MainActivity,"버튼 반응하나요?",Toast.LENGTH_LONG).show()
         }
 
     }
