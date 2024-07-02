@@ -13,12 +13,12 @@
         android:id="@+id/exBtn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="버튼1"/>
+        android:text="정섭1"/>
 
     <Button
         android:id="@+id/exBtn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="버튼2"/>
+        android:text="정섭2"/>
 
 </LinearLayout>
