@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidLabTest501</string>
     <string name="lunch_today">오늘 점심 뭐 먹나요?</string>
+    <string name="lunch_introduce">된장찌개,국수,칼국수,국밥,비빔밥,라멘 -웹페이지 주소 : https://goldmagnetsoft.com, 전화번호 : +82-123-4567, 이메일:lsy@naver.com</string>
 </resources>
