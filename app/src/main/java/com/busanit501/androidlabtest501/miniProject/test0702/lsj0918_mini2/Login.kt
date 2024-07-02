@@ -8,25 +8,29 @@ class Login {
 
 
     fun loginUser(userMap: MutableMap<String,Lsj0918_mini>) {
+        // 사용자 아이디 입력
         println("ID:")
         val mid = scanner.nextLine()
+        // 사용자 비밀번호 입력
         println("PW:")
         val mpw = scanner.nextLine()
+
         // 입력한 아이디가 userMap에 있는지 확인
         val user = userMap.containsKey(mid)
 
         if (user) {
             // 아이디가 존재하는 경우 사용자 정보를 가져옴
             val userMember: Lsj0918_mini? = userMap.get(mid)
+
             // 아이디와 비밀번호가 일치하는지 확인
             if(mid.equals(userMember?.mid) && mpw.equals(userMember?.mpw)) {
                 println("로그인 성공, ${userMember?.mid}님 환영합니다.")
             } else {
-                // 아이디가 존재하지 않는 경우
                 println("로그인 실패, 아이디와 패스워드 확인해주세요")
             }
 
         } else {
+            // 아이디가 존재하지 않는 경우
             println("로그인 실패, 아이디와 패스워드 확인해주세요")
         }
     }
