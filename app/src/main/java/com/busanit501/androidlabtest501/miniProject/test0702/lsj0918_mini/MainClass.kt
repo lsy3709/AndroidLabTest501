@@ -21,6 +21,7 @@ fun main() {
             2 -> login.login(scanner)
             3 -> return
             else -> println("다시 시도하세요.")
+
         }
     }
 }

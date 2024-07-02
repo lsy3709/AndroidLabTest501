@@ -15,6 +15,7 @@ class Login(private val users: MutableList<UserLsj0918>) {
             println("로그인 성공 $ID!")
         } else {
             println("로그인 실패.")
+
         }
     }
 }

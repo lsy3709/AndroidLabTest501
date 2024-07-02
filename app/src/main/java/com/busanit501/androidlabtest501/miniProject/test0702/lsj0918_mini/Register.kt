@@ -17,6 +17,7 @@ class Register(private val users: MutableList<UserLsj0918>) {
         } else {
             users.add(UserLsj0918(ID, Password,Email))
             println("회원가입이 완료되었습니다.")
+
         }
     }
 }
