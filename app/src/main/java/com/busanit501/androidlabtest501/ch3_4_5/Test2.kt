@@ -8,6 +8,7 @@ class Test2 {
 //class User(nameTest2:String, ageTest2:Int){
 // 매개변수 앞에 키워드 val 붙이면, 함수 내부에서도, 멤버 처럼 사용 가능.
 //    class User(val nameTest2:String, val ageTest2:Int){
+
 class User(name: String){
     init {
         println("해당 클래스 인스턴스 주 생성자 이용해서 호출시, 반드시 실행됨.")
