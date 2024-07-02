@@ -1,6 +1,11 @@
 package com.busanit501.androidlabtest501.ch06
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +33,33 @@ class Ch6MainActivity : AppCompatActivity() {
         // 화면을 그리는 용도 보다, 로직 처리를 한다.
         //예) xml 화면 요소를 그리기, 해당 요소를 선택해서, 이벤트 처리를 한다.
         // 예2) 데이터 송수신.
+
+        // 샘플 버튼 클릭시 이벤트 처리,
+        val sampleBtn : Button = findViewById<Button>(R.id.sampleBtn1)
+
+        // 샘플 버튼 클릭시 이벤트 처리,
+        val sampleBtn2 : Button = findViewById<Button>(R.id.sampleBtn2)
+
+        // 이미지 뷰 요소를 선택.
+        val sampleImg : ImageView = findViewById<ImageView>(R.id.imageView1)
+        sampleBtn.setOnClickListener {
+//            println("sampleBtn 클릭 확인.")
+            // 로그캣, 로깅으로 확인. 콘솔 확인
+            Log.d("Ch6MainActivity","sampleBtn 클릭 확인.")
+            // 화면에서 말 풍선 확인.
+            Toast.makeText(this@Ch6MainActivity,"버튼 반응하나요?",Toast.LENGTH_LONG).show()
+            // 이미지 화면 , show/hide
+            // hide
+            sampleImg.visibility = View.INVISIBLE
+        }
+
+        // 샘플버튼 2
+        sampleBtn2.setOnClickListener {
+//           // 이미지 화면 , show/hide
+            // hide
+            sampleImg.visibility = View.VISIBLE
+        }
+
 
     }
 }
