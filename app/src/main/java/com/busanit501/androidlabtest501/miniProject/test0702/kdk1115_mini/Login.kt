@@ -6,9 +6,9 @@ class Login(private val users: List<Userkdk1115>) {
     fun attemptLogin(scanner: Scanner): Boolean {
         println("ID를 입력하세요.")
         val id = scanner.nextLine()
-        println("PW를 입력하세요.")
+        println("PW를 입력하세요")
         val pw = scanner.nextLine()
-
+//죄송함돠
         val user = users.find { it.ID == id && it.PW == pw }
 
         return if (user != null) {

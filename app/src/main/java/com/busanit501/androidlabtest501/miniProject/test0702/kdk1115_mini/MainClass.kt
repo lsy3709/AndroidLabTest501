@@ -13,7 +13,7 @@ fun main(){
 
     val register = Register()
     val login = Login(joinMemberList)
-
+//죄송함돠
     while (true){
         println("==========================")
         println("고도균 미니실습 회원가입,로그인")
