@@ -25,7 +25,8 @@ class Register {
 
         val newUser = nhj0918_mini(mid, mpw, email)
         userMap.set(mid,newUser)
-        // 새로운유저를 userMap에 저장
+        // 새로운유저를 userMap에 저장함
+
 
         println("회원 가입 완료")
         return newUser
