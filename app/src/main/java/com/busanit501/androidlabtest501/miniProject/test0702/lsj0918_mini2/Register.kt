@@ -32,5 +32,6 @@ class Register {
         println("회원 가입 완료")
         // 등록된 사용자 객체 반환
         return newUser
+
     }
 }

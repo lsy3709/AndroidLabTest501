@@ -6,6 +6,7 @@ class Login {
     // Scanner 객체를 사용하여 사용자 입력을 받음
     private val scanner = Scanner(System.`in`)
 
+
     fun loginUser(userMap: MutableMap<String,Lsj0918_mini>) {
         println("ID:")
         val mid = scanner.nextLine()
