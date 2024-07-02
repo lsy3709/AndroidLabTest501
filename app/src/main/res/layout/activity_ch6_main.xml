@@ -41,6 +41,12 @@
             android:layout_height="wrap_content"
             android:text="샘플 버튼2"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lunch_introduce"
+            android:autoLink="web|phone|email"/>
+
 
 
 
