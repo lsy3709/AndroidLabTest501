@@ -5,6 +5,7 @@ import java.nio.file.Files.find
 import java.util.Scanner
 
 class Login {
+    //
     private val scanner = Scanner(System.`in`)
 
     fun loginUser(userMap: MutableMap<String,Lsy1205_mini>) {
