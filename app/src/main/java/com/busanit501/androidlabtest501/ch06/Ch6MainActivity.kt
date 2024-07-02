@@ -37,7 +37,7 @@ class Ch6MainActivity : AppCompatActivity() {
         sampleBtn.setOnClickListener {
 //            println("sampleBtn 클릭 확인.")
             Log.d("Ch6MainActivity","sampleBtn 클릭 확인.")
-            Toast.makeText(this,"버튼 반응하나요?",Toast.LENGTH_LONG)
+            Toast.makeText(this@Ch6MainActivity,"버튼 반응하나요?",Toast.LENGTH_LONG).show()
         }
 
     }
