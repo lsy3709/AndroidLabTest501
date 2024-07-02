@@ -14,20 +14,28 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="오늘 점심은 ? 닭칼 먹었어요, 엄청 매움 ㅠㅠ"
             android:textSize="20sp"/>
 
         <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/food1"/>
 
         <Button
+            android:id="@+id/sampleBtn1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="샘플 버튼1"/>
+        <Button
+            android:id="@+id/sampleBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="샘플 버튼2"/>
 
 
 

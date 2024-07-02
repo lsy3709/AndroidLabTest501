@@ -1,6 +1,7 @@
 package com.busanit501.androidlabtest501.ch06
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,12 @@ class Ch6MainActivity : AppCompatActivity() {
         // 화면을 그리는 용도 보다, 로직 처리를 한다.
         //예) xml 화면 요소를 그리기, 해당 요소를 선택해서, 이벤트 처리를 한다.
         // 예2) 데이터 송수신.
+
+        // 샘플 버튼 클릭시 이벤트 처리,
+        val sampleBtn : Button = findViewById<Button>(R.id.sampleBtn1)
+        sampleBtn.setOnClickListener {
+            println("sampleBtn 클릭 확인.")
+        }
 
     }
 }
