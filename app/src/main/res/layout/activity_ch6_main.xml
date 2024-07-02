@@ -13,11 +13,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--            android:text="오늘 점심은 ? 닭칼 먹었어요, 엄청 매움 ㅠㅠ"-->
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="오늘 점심은 ? 닭칼 먹었어요, 엄청 매움 ㅠㅠ"
+            android:text="@string/lunch_today"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            android:textAlignment="center"
             android:textSize="20sp"/>
 
         <ImageView

@@ -15,14 +15,33 @@
 
         <Button
             android:id="@+id/sampleTestBtn1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SampleBtn1"/>
         <Button
             android:id="@+id/sampleTestBtn2"
+            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SampleBtn2"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/sampleTestBtn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SampleBtn3"/>
+            <Button
+                android:id="@+id/sampleTestBtn4"
+                android:layout_width="300dp"
+                android:paddingBottom="30dp"
+                android:layout_height="wrap_content"
+                android:text="SampleBtn4"
+                android:backgroundTint="#2196F3"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

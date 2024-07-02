@@ -50,7 +50,7 @@ class Ch6MainActivity : AppCompatActivity() {
             Toast.makeText(this@Ch6MainActivity,"버튼 반응하나요?",Toast.LENGTH_LONG).show()
             // 이미지 화면 , show/hide
             // hide
-            sampleImg.visibility = View.INVISIBLE
+            sampleImg.visibility = View.GONE
         }
 
         // 샘플버튼 2
