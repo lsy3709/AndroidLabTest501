@@ -24,7 +24,6 @@ fun main(){
             1 -> register.registerUser(scanner, joinMemberList)
             2 -> {
                 if (login.attemptLogin(scanner)) {
-                    break
                 }
             }
             3 -> {println("종료됩니다.")
