@@ -29,7 +29,26 @@ fun main() {
 //    some2(100)
 
     //고차 함수 사용하기, 인자 : 함수를 넣기
+    // result , 타입을 명시 안했고, 결과는 또 함수
     val result = hofFun ({no -> no > 0  })
-    println("고차함수 결괏값 조회 : ${result}")
+//    println("고차함수 결괏값 조회 : ${result()}")
+
+    //널 가능 연산자 확인해보기.
+    var nullData : String? = "오늘 비가 많이 오네 ㅠㅠ"
+    val length = if(nullData == null) {
+        0
+    } else {
+        nullData.length
+    }
+//    println("nullData length :  $length" )
+
+    // 널이 아니면 해당 값을 가지고 오고, 널이면, 임의의 값 지정.
+//    println("nullData length :  ${nullData?.length ?: 100}" )
+
+    // 널 발생시키기 예제
+    fun sample(data: String?) : Int {
+        return data!!.length
+    }
+    println(sample(null))
 
 }
