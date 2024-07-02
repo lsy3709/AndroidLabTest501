@@ -1,4 +1,4 @@
-package com.busanit501.androidlabtest501.kcy0810_mini
+package com.busanit501.androidlabtest501.miniProject.test0702.lsy1205_mini.kcy0810_mini
 
 import java.util.Scanner
 
