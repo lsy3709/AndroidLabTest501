@@ -13,6 +13,21 @@
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
         <activity
+            android:name=".miniProject.test0703.test0101_mini.Test0101JoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".miniProject.test0703.lsy1205_mini.Lsy1205SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".miniProject.test0703.lsy1205_mini.Lsy1205MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".miniProject.test0703.lsy1205_mini.Lsy1205LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".miniProject.test0703.lsy1205_mini.Lsy1205JoinActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch06.Ch06Test2Activity"
             android:exported="true" />
         <activity
