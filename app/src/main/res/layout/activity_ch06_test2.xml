@@ -22,13 +22,14 @@
             />
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/food2"
             android:maxWidth="150dp"
             android:maxHeight="150dp"
             android:adjustViewBounds="true"
-            android:backgroundTint="#C52525"/>
+            android:layout_gravity="center"
+            android:background="#C52525"/>
 
     </LinearLayout>
 
