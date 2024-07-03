@@ -2,8 +2,9 @@ package com.busanit501.androidlabtest501.miniProject.test0702.lsj0918_mini2
 
 import java.util.Scanner
 
+// 사용자 회원가입을 처리하는 메서드
 class Register {
-   // 사용자 회원가입을 처리하는 메서드
+    // Scanner 객체를 사용하여 사용자 입력을 받음
     private val scanner = Scanner(System.`in`)
 
     fun registerUser(userMap: MutableMap<String,Lsj0918_mini>): Lsj0918_mini? {
@@ -17,6 +18,7 @@ class Register {
         println("EMAIL:")
         val email = scanner.nextLine()
 
+        // 입력한 아이디가 userMap에 있는지 확인
         val user = userMap.containsKey(mid)
 
         // 아이디 중복 시 처리
@@ -26,10 +28,12 @@ class Register {
         }
         // 새로운 사용자 객체 생성
         val newUser = Lsj0918_mini(mid, mpw, email)
+        //사용자 추가
         userMap.set(mid,newUser)
 
         // 회원가입 완료 메시지 출력
         println("회원 가입 완료")
+
         // 등록된 사용자 객체 반환
         return newUser
 
