@@ -27,7 +27,7 @@ class Ch06Test2Activity : AppCompatActivity() {
         val ch6LoginBtn = findViewById<Button>(R.id.ch6LoginBtn)
 
         ch6LoginBtn.setOnClickListener {
-            Toast.makeText(this@Ch06Test2Activity,"mid:${ch06Mid}, mpw:${ch06Mpw}",Toast.LENGTH_LONG).show()
+            Toast.makeText(this@Ch06Test2Activity,"mid:${ch06Mid.text.toString()}, mpw:${ch06Mpw.text.toString()}",Toast.LENGTH_LONG).show()
         }
 
     }
