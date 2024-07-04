@@ -31,6 +31,13 @@
             android:layout_height="wrap_content"
             android:text="닭도리탕|삼겹살|집밥"/>
 
+        <Button
+            android:id="@+id/ch08Btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="일어나라 친구야~~~~"
+            android:textSize="30sp"/>
+
     </LinearLayout>
 
 

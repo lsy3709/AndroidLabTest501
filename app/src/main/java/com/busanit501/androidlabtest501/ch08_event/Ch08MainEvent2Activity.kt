@@ -3,6 +3,7 @@ package com.busanit501.androidlabtest501.ch08_event
 import android.os.Bundle
 import android.util.Log
 import android.widget.CompoundButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -44,6 +45,13 @@ class Ch08MainEvent2Activity : AppCompatActivity(), CompoundButton.OnCheckedChan
         binding.ch08CheckBox3.setOnCheckedChangeListener { compoundButton, b ->
             Log.d(TAG,"SAM 기법 이벤트 리스너 연결 방법3, b: ${b}, compoundButton.id: ${compoundButton.id}  ")
         }
+
+        // 롱클릭 확인해보기.
+        binding.ch08Btn1.setOnLongClickListener {
+            Toast.makeText(this@Ch08MainEvent2Activity,"일어나라 친구야 같이 취업하자!!",Toast.LENGTH_LONG).show()
+            true
+        }
+
 
     } //onCreate
 
