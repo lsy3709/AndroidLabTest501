@@ -29,7 +29,7 @@ class Ch08MainEvent1Activity : AppCompatActivity() {
         // key , 터치 확인, 수정
         when(event?.action){
             MotionEvent.ACTION_DOWN -> {
-                Log.d(TAG,"ACTION_DOWN : Down key 동작 확인")
+                Log.d(TAG,"ACTION_DOWN : Down key 동작 확인,좌표 : x : ${event.x}, y:${event.y} , rawX : ${event.rawX}, rawY : ${event.rawY}")
             }
 
             MotionEvent.ACTION_UP -> {

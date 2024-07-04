@@ -13,19 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Ch6MainActivity">
+      <SelectionState runConfigName="Ch07Main3RelaActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch06TestActivity">
+      <SelectionState runConfigName="Ch07MainFrameActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch06Test2Activity">
+      <SelectionState runConfigName="Ch07MainGridActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch07MainActivity">
+      <SelectionState runConfigName="Ch07MainConstraintActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch07Main2Activity">
+      <SelectionState runConfigName="Ch08MainEvent1Activity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
