@@ -1,4 +1,4 @@
-package com.busanit501.androidlabtest501.ch07
+package com.busanit501.androidlabtest501.ch07_layout
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

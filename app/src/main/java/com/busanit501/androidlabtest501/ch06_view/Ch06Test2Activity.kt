@@ -1,4 +1,4 @@
-package com.busanit501.androidlabtest501.ch06
+package com.busanit501.androidlabtest501.ch06_view
 
 import android.os.Bundle
 import android.widget.Button

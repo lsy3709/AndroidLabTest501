@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch07.Ch07MainConstraintActivity">
+    tools:context=".ch07_layout.Ch07MainConstraintActivity">
 
     <ImageView
         android:id="@+id/imageView"

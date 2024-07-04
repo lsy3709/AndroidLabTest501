@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,34 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".ch07.Ch07MainConstraintActivity"
+            android:name=".ch08_event.Ch08MainEvent1Activity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07MainGridActivity"
+            android:name=".ch07_layout.Ch07MainConstraintActivity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07MainFrameActivity"
+            android:name=".ch07_layout.Ch07MainGridActivity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07Main3RelaActivity"
+            android:name=".ch07_layout.Ch07MainFrameActivity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07Main3Activity"
+            android:name=".ch07_layout.Ch07Main3RelaActivity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07Main2Activity"
+            android:name=".ch07_layout.Ch07Main3Activity"
             android:exported="true" />
         <activity
-            android:name=".ch07.Ch07MainActivity"
+            android:name=".ch07_layout.Ch07Main2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ch07_layout.Ch07MainActivity"
             android:exported="true" />
         <activity
             android:name=".miniProject.test0703.test0101_mini.Test0101JoinActivity"
             android:exported="false" />
         <activity
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205SplashActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,13 +58,13 @@
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205JoinActivity"
             android:exported="true" />
         <activity
-            android:name=".ch06.Ch06Test2Activity"
+            android:name=".ch06_view.Ch06Test2Activity"
             android:exported="true" />
         <activity
-            android:name=".ch06.Ch06TestActivity"
+            android:name=".ch06_view.Ch06TestActivity"
             android:exported="true" />
         <activity
-            android:name=".ch06.Ch6MainActivity"
+            android:name=".ch06_view.Ch6MainActivity"
             android:exported="true" /> <!-- 다른 화면을 따로 실행하고 싶으면, -->
         <!-- TestActivity 우클릭 하고 따로 실행. 주의사항, -->
         <!-- exported="true" 변경, 각각 실행됨. -->
