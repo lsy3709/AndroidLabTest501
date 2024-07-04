@@ -7,4 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".miniProject.test0703.lsy1205_mini.Lsy1205MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="메인화면"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:background="#FF9800"/>
+
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/food3"
+            android:maxWidth="500dp"
+            android:maxHeight="400dp"
+            android:adjustViewBounds="true"/>
+
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="피자 먹고싶다!!"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ch06LsyJoinBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="회원가입"/>
+
+            <Button
+                android:id="@+id/ch06LsyLoginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그인"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
