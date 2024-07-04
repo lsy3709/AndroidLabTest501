@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
         <activity
+            android:name=".ch07.Ch07MainGridActivity"
+            android:exported="true" />
+        <activity
             android:name=".ch07.Ch07MainFrameActivity"
             android:exported="true" />
         <activity
@@ -64,7 +67,7 @@
             android:exported="true" /> <!-- 앱을 만들면, 기본 MainActivity 시작화면으로 지정. -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

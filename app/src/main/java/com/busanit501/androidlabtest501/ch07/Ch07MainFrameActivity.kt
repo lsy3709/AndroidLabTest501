@@ -31,9 +31,13 @@ class Ch07MainFrameActivity : AppCompatActivity() {
         val img2 = binding.ch07FrameImg2
         val img3 = binding.ch07FrameImg3
 
+        img1.visibility = View.VISIBLE
+        img2.visibility = View.INVISIBLE
+        img3.visibility = View.INVISIBLE
+
         val imgList : MutableList<ImageView> = mutableListOf<ImageView>(img1,img2,img3)
 
-        var imgCheck: Int = 0
+        var imgCheck: Int = 1
 
         testBtn.setOnClickListener {
             //
@@ -56,6 +60,69 @@ class Ch07MainFrameActivity : AppCompatActivity() {
             }
         }
 
+
+        img1.setOnClickListener {
+            //
+            if(imgCheck == 0) {
+                img1.visibility = View.VISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            } else if (imgCheck == 1) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.VISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            }
+            else if (imgCheck == 2) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.VISIBLE
+                imgCheck = 0;
+            }
+        }
+
+        img2.setOnClickListener {
+            //
+            if(imgCheck == 0) {
+                img1.visibility = View.VISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            } else if (imgCheck == 1) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.VISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            }
+            else if (imgCheck == 2) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.VISIBLE
+                imgCheck = 0;
+            }
+        }
+
+        img3.setOnClickListener {
+            //
+            if(imgCheck == 0) {
+                img1.visibility = View.VISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            } else if (imgCheck == 1) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.VISIBLE
+                img3.visibility = View.INVISIBLE
+                imgCheck++
+            }
+            else if (imgCheck == 2) {
+                img1.visibility = View.INVISIBLE
+                img2.visibility = View.INVISIBLE
+                img3.visibility = View.VISIBLE
+                imgCheck = 0;
+            }
+        }
 
 
 
