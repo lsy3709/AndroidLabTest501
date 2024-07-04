@@ -2,6 +2,7 @@
 <resources>
     <style name="MyTextStyle">
         <item name="android:color">@color/main_text_color</item>
-        <item name="android:textSize">@dimen/Para_Title_size</item>
+        <item name="android:textSize">@dimen/Main_Title_size</item>
+        <item name="fontFamily">@font/jua_regular</item>
     </style>
 </resources>

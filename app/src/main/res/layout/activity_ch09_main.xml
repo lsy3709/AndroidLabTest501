@@ -25,6 +25,15 @@
             android:background="@color/sub_text_color"
             android:text="@string/lunch_today"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lunch_introduce"
+            android:fontFamily="@font/jua_regular"
+            android:textSize="20sp"
+            android:autoLink="web|phone|email"/>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
