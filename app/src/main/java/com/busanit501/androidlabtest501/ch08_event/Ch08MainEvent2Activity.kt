@@ -58,6 +58,11 @@ class Ch08MainEvent2Activity : AppCompatActivity(), CompoundButton.OnCheckedChan
             Toast.makeText(this@Ch08MainEvent2Activity,"체크한 부분의 이름: ${test}",Toast.LENGTH_LONG).show()
         }
 
+        binding.ch08RadioBtn2.setOnCheckedChangeListener { compoundButton, b ->
+            val test = compoundButton.text.toString()
+            Toast.makeText(this@Ch08MainEvent2Activity,"체크한 부분의 이름: ${test}",Toast.LENGTH_LONG).show()
+        }
+
 
     } //onCreate
 
