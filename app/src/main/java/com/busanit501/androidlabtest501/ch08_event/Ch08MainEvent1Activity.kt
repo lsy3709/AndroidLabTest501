@@ -2,6 +2,7 @@ package com.busanit501.androidlabtest501.ch08_event
 
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.MotionEvent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -39,5 +40,14 @@ class Ch08MainEvent1Activity : AppCompatActivity() {
 
         return super.onTouchEvent(event)
 
+    } // onTouchEvent
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        when(keyCode) {
+            KeyEvent.KEYCODE_0 -> Log.d(TAG,"KEYCODE_0, 숫자 0번 동작 확인")
+            KeyEvent.KEYCODE_A -> Log.d(TAG,"KEYCODE_A, A 키 동작 확인")
+            KeyEvent.KEYCODE_ENTER -> Log.d(TAG,"KEYCODE_ENTER, enter 키 동작 확인")
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
