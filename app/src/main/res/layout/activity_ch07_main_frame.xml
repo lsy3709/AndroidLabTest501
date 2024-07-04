@@ -14,17 +14,28 @@
 
         <ImageView
             android:id="@+id/ch07FrameImg1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/food3"
-            android:maxWidth="200dp"
+            android:maxWidth="300dp"
+            android:maxHeight="200dp"
+            android:adjustViewBounds="true"
+            />
+
+        <ImageView
+            android:id="@+id/ch07FrameImg2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/food2"
+            android:maxWidth="300dp"
             android:maxHeight="200dp"
             android:adjustViewBounds="true"
             />
 
         <Button
+            android:layout_marginTop="400dp"
             android:id="@+id/ch07FrameBtn1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="버튼1"/>
