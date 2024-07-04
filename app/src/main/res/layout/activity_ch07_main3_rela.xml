@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:text="버튼1"
             android:textSize="30sp"
-            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/ch07relaBtn2"
+            android:layout_below="@+id/ch07relaBtn3"
             />
 
         <TextView
@@ -26,16 +27,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="@string/lunch_today"/>
+            android:text="@string/lunch_today"
+            android:layout_alignParentTop="true"/>
 
         <Button
+            android:layout_marginLeft="10dp"
             android:id="@+id/ch07relaBtn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="버튼2"
-            android:layout_below="@+id/ch07relaBtn1"
-
+            android:layout_below="@+id/ch07relaImg1"
             />
 
         <Button
@@ -44,8 +46,8 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="버튼3"
+            android:layout_below="@+id/ch07relaImg1"
             android:layout_toRightOf="@+id/ch07relaBtn2"
-            android:layout_below="@+id/ch07relaBtn1"
 
             />
 
@@ -55,8 +57,8 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="버튼4"
+            android:layout_below="@+id/ch07relaImg1"
             android:layout_toRightOf="@+id/ch07relaBtn3"
-            android:layout_below="@+id/ch07relaBtn1"
 
             />
 
@@ -80,22 +82,23 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="버튼6"
-            android:layout_toRightOf="@+id/ch07relaBtn3"
-            android:layout_above="@+id/ch07relaBtn4"
+            android:layout_below="@+id/ch07relaBtn1"
+            android:layout_toRightOf="@+id/ch07relaBtn2"
+
 
             />
 
         <ImageView
+            android:layout_marginTop="50dp"
             android:id="@+id/ch07relaImg1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/food2"
             android:background="#F44336"
-            android:maxWidth="100dp"
-            android:maxHeight="100dp"
+            android:maxWidth="300dp"
+            android:maxHeight="200dp"
             android:adjustViewBounds="true"
-            android:layout_toLeftOf="@+id/ch07relaBtn5"
-            android:layout_below="@+id/ch07relaBtn2"
+            android:layout_below="@+id/ch07relaTextView1"
             />
 
     </RelativeLayout>
