@@ -33,6 +33,11 @@
             android:textSize="20sp"
             android:autoLink="web|phone|email"/>
 
+        <ImageView
+            android:layout_width="@dimen/profile_Img_width"
+            android:layout_height="@dimen/profile_Img_width"
+            android:src="@android:drawable/arrow_up_float"/>
+
 
     </LinearLayout>
 
