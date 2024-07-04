@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ch07.Ch07Main3RelaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/ch07relaBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼1"
+            android:textSize="30sp"
+            android:layout_below="@+id/ch07relaTextView1"
+            />
+
+        <TextView
+            android:id="@+id/ch07relaTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="조금만 힘 내세요. 곧 가요."/>
+
+        <Button
+            android:id="@+id/ch07relaBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="버튼2"
+            android:layout_below="@+id/ch07relaBtn1"
+
+            />
+
+        <Button
+            android:id="@+id/ch07relaBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="버튼3"
+            android:layout_toRightOf="@+id/ch07relaBtn2"
+            android:layout_below="@+id/ch07relaBtn1"
+
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
