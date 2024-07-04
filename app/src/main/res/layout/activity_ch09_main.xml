@@ -18,6 +18,13 @@
             android:layout_height="300dp"
             android:src="@drawable/ch9_test_rectangle"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextStyle"
+            android:background="@color/sub_text_color"
+            android:text="@string/lunch_today"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
