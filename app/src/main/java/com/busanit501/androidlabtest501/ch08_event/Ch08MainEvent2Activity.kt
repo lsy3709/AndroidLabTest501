@@ -50,7 +50,7 @@ class Ch08MainEvent2Activity : AppCompatActivity(), CompoundButton.OnCheckedChan
 //    방법1
     //체크 박스 리스너
     override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
-        Log.d(TAG,"checked Chaged 리스너 확인 중. 방법1 체크박스클릭. ${p1}")
+        Log.d(TAG,"checked Chaged 리스너 확인 중. 방법1 체크박스클릭. ${p1},CompoundButton : ${p0?.id} ")
     }
 
 } //Ch08MainEvent2Activity
@@ -59,7 +59,7 @@ class Ch08MainEvent2Activity : AppCompatActivity(), CompoundButton.OnCheckedChan
 //방법2 , 클래스를 이용한 이벤트 리스너 사용하기.
 class MyEventHandler : CompoundButton.OnCheckedChangeListener {
     override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
-        Log.d("Ch08MainEvent2Activity","checked Chaged 리스너 확인 중.  방법2 체크박스클릭. ${p1}")
+        Log.d("Ch08MainEvent2Activity","checked Chaged 리스너 확인 중.  방법2 체크박스클릭. ${p1},CompoundButton : ${p0?.id} ")
     }
 
 }
