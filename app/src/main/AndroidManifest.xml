@@ -29,16 +29,22 @@
             android:exported="false" />
         <activity
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205SplashActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".miniProject.test0703.lsy1205_mini.Lsy1205JoinActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch06.Ch06Test2Activity"
             android:exported="true" />
@@ -56,11 +62,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
