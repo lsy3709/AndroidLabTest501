@@ -26,7 +26,7 @@ class Ch08MainEvent1Activity : AppCompatActivity() {
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
 
-        // key , 볼륨 버튼 확인
+        // key , 터치 확인, 수정
         when(event?.action){
             MotionEvent.ACTION_DOWN -> {
                 Log.d(TAG,"ACTION_DOWN : Down key 동작 확인")
