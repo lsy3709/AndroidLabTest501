@@ -47,10 +47,15 @@ class Ch08MainEvent1Activity : AppCompatActivity() {
             KeyEvent.KEYCODE_0 -> Log.d(TAG,"KEYCODE_0, 숫자 0번 동작 확인")
             KeyEvent.KEYCODE_A -> Log.d(TAG,"KEYCODE_A, A 키 동작 확인")
             KeyEvent.KEYCODE_ENTER -> Log.d(TAG,"KEYCODE_ENTER, enter 키 동작 확인")
-            KeyEvent.KEYCODE_BACK -> Log.d(TAG,"KEYCODE_BACK, 뒤로가기 키 동작 확인")
+//            KeyEvent.KEYCODE_BACK -> Log.d(TAG,"KEYCODE_BACK, 뒤로가기 키 동작 확인")
             KeyEvent.KEYCODE_VOLUME_UP -> Log.d(TAG,"KEYCODE_VOLUME_UP, 볼륨업 키 동작 확인")
             KeyEvent.KEYCODE_VOLUME_DOWN -> Log.d(TAG,"KEYCODE_VOLUME_DOWN, 볼륨다운 키 동작 확인")
         }
         return super.onKeyDown(keyCode, event)
+    } //onKeyDown
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Log.d(TAG,"백키 수동으로 확인 해보기.")
     }
 }
