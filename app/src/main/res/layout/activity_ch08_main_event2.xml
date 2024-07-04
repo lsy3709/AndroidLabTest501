@@ -25,6 +25,12 @@
             android:layout_height="wrap_content"
             android:text="참깨라면&amp;참치김밥"/>
 
+        <CheckBox
+            android:id="@+id/ch08CheckBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닭도리탕|삼겹살|집밥"/>
+
     </LinearLayout>
 
 

@@ -39,6 +39,12 @@ class Ch08MainEvent2Activity : AppCompatActivity(), CompoundButton.OnCheckedChan
         //해당 체크박스 뷰 요소와, 이벤트 리스너 연결해주기.
         binding.ch08CheckBox2.setOnCheckedChangeListener(MyEventHandler())
 
+        //방법3
+        // 뷰에서, 직접 바로 접근해서 이용하기, 원래 이거 사용하고 있었음. ㅋㅋㅋ
+        binding.ch08CheckBox3.setOnCheckedChangeListener { compoundButton, b ->
+            Log.d(TAG,"SAM 기법 이벤트 리스너 연결 방법3, b: ${b}, compoundButton.id: ${compoundButton.id}  ")
+        }
+
     } //onCreate
 
 //    방법1
