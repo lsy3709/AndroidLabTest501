@@ -21,6 +21,20 @@
             android:text="토스트 후처리 확인"
             style="@style/MyTextStyle"/>
 
+        <Button
+            android:id="@+id/ch10dateBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="데이트 피커 확인"
+            style="@style/MyTextStyle"/>
+
+        <TextView
+            android:id="@+id/ch10dateResultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

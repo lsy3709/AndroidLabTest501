@@ -1,10 +1,12 @@
 package com.busanit501.androidlabtest501.ch10_dialog_permission
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -75,7 +77,7 @@ class Ch10MainActivity : AppCompatActivity() {
                     //나타 날 때, 후처리 동작 추가
                     override fun onToastShown() {
                         super.onToastShown()
-                        Log.d(TAG,"토스가 나타날 때 동작하는 로그")
+                        Log.d(TAG,"토스트가 나타날 때 동작하는 로그")
                         //화면 이동도 추가해보기.
                         val intent = Intent(this@Ch10MainActivity, Lsy1205MainActivity::class.java)
                         startActivity(intent)
@@ -83,13 +85,26 @@ class Ch10MainActivity : AppCompatActivity() {
                     //사라질 때, 후처리 동작 추가
                     override fun onToastHidden() {
                         super.onToastHidden()
-                        Log.d(TAG,"토스가 사라질 때 동작하는 로그")
+                        Log.d(TAG,"토스트가 사라질 때 동작하는 로그")
                     }
                 }
             )
             toast.show()
         }
 
+
+        // 날 짜 데이터 피커 확인 해보기.
+        binding.ch10dateBtn2.setOnClickListener {
+            // object, 익명 클래스, 1회용 클래스, 이벤트 처리시 자주 사용됨.
+            DatePickerDialog(this@Ch10MainActivity, object : DatePickerDialog.OnDateSetListener {
+                override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayofMonth: Int) {
+                    Log.d(TAG,"년도 : ${year}년, 월 : ${month+1}월 , 일 : ${dayofMonth}일")
+                    Toast.makeText(this@Ch10MainActivity,"년도 : ${year}년, 월 : ${month+1}월 , 일 : ${dayofMonth}일", Toast.LENGTH_LONG)
+                    binding.ch10dateResultTextView.text = "${year}년, ${month+1}월 , ${dayofMonth}일"
+                }
+
+            },2024,7,5).show()
+        }
 
     }// onCreate
 }
