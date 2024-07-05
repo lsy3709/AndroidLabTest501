@@ -2,11 +2,15 @@ package com.busanit501.androidlabtest501.ch10_dialog_permission
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
@@ -24,6 +28,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import androidx.core.view.ViewCompat
@@ -312,11 +317,56 @@ class Ch10MainActivity : AppCompatActivity() {
 //                )
 
                 // 진동에 특정 패턴 주기.
-                vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(500,1000,500,2000), intArrayOf(0,50,0,200), -1))
+                vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(500,1000,500,2000), intArrayOf(0,50,0,200), 1))
             } else {
                 vibrator.vibrate(500)
             }
         }
+
+        binding.ch10NotificationBtn.setOnClickListener {
+            //알림 채널 설정.
+            val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            val builder : NotificationCompat.Builder
+            // api 레벨 26 이상일 때, 채널 설정 코드가 추가되어서, 변경됨.
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channelId = "one-channel"
+                val channelName = "My Channel One"
+                val channel = NotificationChannel(
+                    channelId,channelName,NotificationManager.IMPORTANCE_HIGH
+                )
+
+                // 채널 정보 설정.
+                channel.description = "My Channel Test"
+                channel.setShowBadge(true)
+                val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                val audioAttributes = AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .setUsage(AudioAttributes.USAGE_ALARM)
+                    .build()
+
+                channel.setSound(uri,audioAttributes)
+                channel.enableLights(true)
+                channel.lightColor = Color.RED
+                channel.enableVibration(true)
+                channel.vibrationPattern = longArrayOf(100,200,100,200)
+
+                manager.createNotificationChannel(channel)
+
+                builder = NotificationCompat.Builder(this@Ch10MainActivity,channelId)
+            } else {
+                builder = NotificationCompat.Builder(this@Ch10MainActivity)
+            }
+            builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
+            builder.setWhen(System.currentTimeMillis())
+            builder.setContentTitle("알림 테스트 제목")
+            builder.setContentText("알림 테스트 본문 내용, 조금만 힘내자!!집에가자.힘나죠?")
+
+            // 알림 발생 시키기
+            // 퍼미션 추가 필요해요. 매니페스트 파일
+            manager.notify(11, builder.build())
+        }
+
+
 
     }// onCreate
 }
