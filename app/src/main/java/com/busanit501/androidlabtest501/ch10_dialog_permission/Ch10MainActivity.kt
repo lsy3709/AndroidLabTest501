@@ -139,6 +139,7 @@ class Ch10MainActivity : AppCompatActivity() {
 
         // 커스텀 다이얼로그, 목록 요소 선택 처리.
         val items = arrayOf<String>("초밥","칼국수","두루치기","된장찌개")
+
         binding.ch10customDialBtn2.setOnClickListener {
             AlertDialog.Builder(this@Ch10MainActivity).run {
                 setTitle("커스텀 다이얼로그 목록")
@@ -159,6 +160,30 @@ class Ch10MainActivity : AppCompatActivity() {
                 setNeutralButton("더보기", null)
                 show()
 
+            }
+        }
+
+        // 커스텀 다이얼로그, 중복 체크
+        binding.ch10customDialBtn3.setOnClickListener {
+            AlertDialog.Builder(this@Ch10MainActivity).run {
+                setTitle("커스텀 다이얼로그 중복 체크")
+                setIcon(android.R.drawable.ic_dialog_info)
+
+                // 추가사항 , 메뉴 목록 추가
+                val objectListener = object : DialogInterface.OnMultiChoiceClickListener {
+                    override fun onClick(p0: DialogInterface?, which: Int, isChecked: Boolean) {
+                        Log.d(TAG,"선택한 점심 메뉴 : ${items[which]}  ${if(isChecked) "선택됨" else "선택해제됨"}")
+                        binding.ch10customResultTextView2.text = "${items[which]}"
+                    }
+                } //objectListener
+
+                // 이벤트 핸들러 추가 및 목록 넣기
+//                setItems(items,objectListener)
+                setMultiChoiceItems(items, booleanArrayOf(true,true,false,false),objectListener)
+                setPositiveButton("수락", null)
+                setNegativeButton("취소", null)
+                setNeutralButton("더보기", null)
+                show()
             }
         }
 
