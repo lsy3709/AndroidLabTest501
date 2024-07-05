@@ -30,6 +30,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import androidx.core.app.RemoteInput
 import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import androidx.core.view.ViewCompat
@@ -385,6 +386,27 @@ class Ch10MainActivity : AppCompatActivity() {
                     "추가 액션1",
                     actionPendingIntent
                 ).build()
+            )
+//            builder.setContentIntent(actionPendingIntent)
+
+            // 3
+            // 추가 액션 넣기, 답글 입력폼 추가
+            val KEY_TEXT_REPLY = "key_text_reply"
+            val replyLabel : String = "답장"
+            var remoteInput : RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
+                setLabel(replyLabel)
+                build()
+            }
+
+            val replyIntent = Intent(this@Ch10MainActivity, ReplyReceiver::class.java)
+            val replyPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,30,replyIntent,PendingIntent.FLAG_IMMUTABLE)
+            // 답장 액션 추가하기.
+            builder.addAction(
+                NotificationCompat.Action.Builder(
+                    android.R.drawable.stat_notify_more,
+                    "답장",
+                    replyPendingIntent
+                ).addRemoteInput(remoteInput).build()
             )
             builder.setContentIntent(actionPendingIntent)
 
