@@ -1,6 +1,9 @@
 package com.busanit501.androidlabtest501.ch09_resources
 
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.WindowMetrics
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +19,13 @@ class Ch09MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // 본인 실물 기기, 에뮬레이터에서, 해당 기기 지원하는 가로 세로 크기 정보 조회.
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
+            Log.d("Ch09MainActivity","width : ${windowMetrics.bounds.width()}" +
+                    ", heigt : ${windowMetrics.bounds.height()}")
         }
     }
 }
