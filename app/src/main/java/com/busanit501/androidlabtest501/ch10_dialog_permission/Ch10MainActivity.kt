@@ -203,10 +203,26 @@ class Ch10MainActivity : AppCompatActivity() {
                         // checkItems2 = {1}
                         resultStr =""
                         for(index in checkItems2){
-                            if(checkItems2.size == 1 ){
+                            if(checkItems2.size == 1 ) {
                                 resultStr += items[index]
-                            } else{
-                                resultStr += items[index] + " "
+                            } else if(checkItems2.size == 2){
+                                resultStr += items[index] + ", "
+                                if(index == 1) {
+                                    resultStr += items[index]
+                                }
+
+                            } else if(checkItems2.size == 3){
+                                resultStr += items[index] + ", "
+                                if(index == 2) {
+                                    resultStr += items[index]
+                                }
+
+                            }  else if(checkItems2.size == 4){
+                                resultStr += items[index] + ", "
+                                if(index == 3) {
+                                    resultStr += items[index]
+                                }
+
                             }
 
                         }
