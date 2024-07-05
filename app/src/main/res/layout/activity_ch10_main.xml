@@ -57,6 +57,20 @@
             android:text="커스텀 다이얼로그 창 확인"
             style="@style/MyTextStyle"/>
 
+        <Button
+            android:id="@+id/ch10customDialBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="커스텀 다이얼로그 목록 확인"
+            style="@style/MyTextStyle"/>
+
+        <TextView
+            android:id="@+id/ch10customResultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
