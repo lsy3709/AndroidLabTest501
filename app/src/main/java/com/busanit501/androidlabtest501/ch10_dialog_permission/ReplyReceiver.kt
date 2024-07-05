@@ -30,15 +30,14 @@ class ReplyReceiver : BroadcastReceiver() {
             builder = NotificationCompat.Builder(context, channelId)
         } else {
             builder = NotificationCompat.Builder(context)
-
+        }
             builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
             builder.setWhen(System.currentTimeMillis())
             builder.setContentTitle("Content Title")
-            builder.setContentText("Content Massage")
+            builder.setContentText("Content Massage : ${replyText}")
 
             manager.notify(11, builder.build())
         }
 
 
     }
-}
