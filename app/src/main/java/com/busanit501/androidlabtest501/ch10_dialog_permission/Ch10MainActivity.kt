@@ -154,10 +154,8 @@ class Ch10MainActivity : AppCompatActivity() {
 
         // 커스텀 다이얼로그, 목록 요소 선택 처리.
         val items = arrayOf<String>("초밥","칼국수","두루치기","된장찌개")
-        var checkItems = mutableMapOf<Int,Int>()
-        var checkItems2 = mutableSetOf<Int>()
-        var tempList = mutableListOf<String>()
-        var resultStr :String =""
+        var tempList2 = mutableListOf<Int>()
+
 
         binding.ch10customDialBtn2.setOnClickListener {
             AlertDialog.Builder(this@Ch10MainActivity).run {
@@ -196,65 +194,27 @@ class Ch10MainActivity : AppCompatActivity() {
                     override fun onClick(p0: DialogInterface?, which: Int, isChecked: Boolean) {
                         Log.d(TAG,"선택한 점심 메뉴 : ${items[which]}  ${if(isChecked) "선택됨" else "선택해제됨"}")
                         if(isChecked){
-//                            checkItems.set(which,which)
-                            checkItems2.add(which)
-                            Log.d(TAG,"선택한 점심 메뉴, add ${which}")
-                            Log.d(TAG,"선택한 점심 메뉴, add ${checkItems2.toString()}")
-                            // 초밥 선택
-                            // checkItems2 = {0}
-                            // 칼국수 선택
-                            // checkItems2 = {0, 1}
-//                            for (i in 1..checkItems.size){
-//                                resultStr += "${items[checkItems.get(i)!!]}"
-//                            }
-                        } else if (checkItems2.size > 0) {
-//                            checkItems.remove(which)
-                            checkItems2.remove(which)
-                            Log.d(TAG,"선택한 점심 메뉴, remove ${which}")
-                            Log.d(TAG,"선택한 점심 메뉴, remove ${checkItems2.toString()}")
-                            // 초밥 선택 해제한 경우
-                            // checkItems2 = {1}
+//
+                            tempList2.add(which)
+                            Log.d(TAG,"선택한 점심 메뉴1, add ${which}")
+                            Log.d(TAG,"선택한 점심 메뉴2, add ${tempList2.toString()}")
+
+                        } else  {
+//
+                            tempList2.remove(which)
+                            Log.d(TAG,"선택한 점심 메뉴3, remove ${which}")
+                            Log.d(TAG,"선택한 점심 메뉴4, remove ${tempList2.toString()}")
+
 
                         }
-                        // checkItems2 = {1}
-                        //checkItems2 에 담아진 , 인덱스는 순서가 고정이지 않음
-                        // 그래서, 이거 생각하고 수정필요
-                        resultStr =""
-                        for(index in checkItems2){
-                            if(checkItems2.size == 1 ) {
-                                Log.d(TAG,"선택한 점심 메뉴, size == 1 ${checkItems2.toString()}")
-                                resultStr += items[index]
-                            } else if(checkItems2.size == 2){
-                                Log.d(TAG,"선택한 점심 메뉴, size == 2 ${checkItems2.toString()}")
-                                resultStr += items[index] + ", "
-                                if(index == 1) {
-                                    resultStr += items[index]
-                                }
 
-                            } else if(checkItems2.size == 3){
-                                Log.d(TAG,"선택한 점심 메뉴, size == 3 ${checkItems2.toString()}")
-                                resultStr += items[index] + ", "
-                                if(index == 2) {
-                                    resultStr += items[index]
-                                }
+                        val selectedItemsString = tempList2.joinToString { items[it] }
+                        Log.d(TAG, "Currently selected items: $selectedItemsString")
 
-                            }  else if(checkItems2.size == 4){
-                                Log.d(TAG,"선택한 점심 메뉴, size == 4 ${checkItems2.toString()}")
-                                resultStr += items[index] + ", "
-                                if(index == 3) {
-                                    resultStr += items[index]
-                                }
 
-                            }
-
-                        }
-//                        for (i in 1..checkItems2.size){
-//                            resultStr += "${items[checkItems2.get(i)!!]}"
-//                        }
-
-                        Log.d(TAG,"선택한 점심 메뉴 :${resultStr} ")
+                        Log.d(TAG,"선택한 점심 메뉴 결과 :${selectedItemsString} ")
 //                        binding.ch10customResultTextView2.text = "${items[which]}"
-                        binding.ch10customResultTextView2.text = resultStr
+                        binding.ch10customResultTextView2.text = selectedItemsString
                     }
                 } //objectListener
 
