@@ -196,6 +196,8 @@ class Ch10MainActivity : AppCompatActivity() {
                         if(isChecked){
 //                            checkItems.set(which,which)
                             checkItems2.add(which)
+                            Log.d(TAG,"선택한 점심 메뉴, add ${which}")
+                            Log.d(TAG,"선택한 점심 메뉴, add ${checkItems2.toString()}")
                             // 초밥 선택
                             // checkItems2 = {0}
                             // 칼국수 선택
@@ -206,28 +208,36 @@ class Ch10MainActivity : AppCompatActivity() {
                         } else if (checkItems2.size > 0) {
 //                            checkItems.remove(which)
                             checkItems2.remove(which)
+                            Log.d(TAG,"선택한 점심 메뉴, remove ${which}")
+                            Log.d(TAG,"선택한 점심 메뉴, remove ${checkItems2.toString()}")
                             // 초밥 선택 해제한 경우
                             // checkItems2 = {1}
 
                         }
                         // checkItems2 = {1}
+                        //checkItems2 에 담아진 , 인덱스는 순서가 고정이지 않음
+                        // 그래서, 이거 생각하고 수정필요
                         resultStr =""
                         for(index in checkItems2){
                             if(checkItems2.size == 1 ) {
+                                Log.d(TAG,"선택한 점심 메뉴, size == 1 ${checkItems2.toString()}")
                                 resultStr += items[index]
                             } else if(checkItems2.size == 2){
+                                Log.d(TAG,"선택한 점심 메뉴, size == 2 ${checkItems2.toString()}")
                                 resultStr += items[index] + ", "
                                 if(index == 1) {
                                     resultStr += items[index]
                                 }
 
                             } else if(checkItems2.size == 3){
+                                Log.d(TAG,"선택한 점심 메뉴, size == 3 ${checkItems2.toString()}")
                                 resultStr += items[index] + ", "
                                 if(index == 2) {
                                     resultStr += items[index]
                                 }
 
                             }  else if(checkItems2.size == 4){
+                                Log.d(TAG,"선택한 점심 메뉴, size == 4 ${checkItems2.toString()}")
                                 resultStr += items[index] + ", "
                                 if(index == 3) {
                                     resultStr += items[index]
