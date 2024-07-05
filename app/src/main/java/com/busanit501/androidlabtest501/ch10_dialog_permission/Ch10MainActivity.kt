@@ -6,6 +6,7 @@ import android.app.TimePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
@@ -259,12 +260,17 @@ class Ch10MainActivity : AppCompatActivity() {
         // 소리 알림음 테스트
 
         binding.ch10soundBtn.setOnClickListener {
-            val notification : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            val notification : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
             // this@Ch10MainActivity -> applicationContext, Context
             val ringtone = RingtoneManager.getRingtone(this@Ch10MainActivity, notification)
             ringtone.play()
         }
 
+        // resources -> raw -> mp3 음원 재생 해보기.
+        binding.ch10soundBtn2.setOnClickListener {
+            val player: MediaPlayer = MediaPlayer.create(this@Ch10MainActivity, R.raw.test_music)
+            player.start()
+        }
 
     }// onCreate
 }
