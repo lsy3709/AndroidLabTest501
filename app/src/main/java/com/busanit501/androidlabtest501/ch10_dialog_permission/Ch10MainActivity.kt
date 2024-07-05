@@ -1,12 +1,14 @@
 package com.busanit501.androidlabtest501.ch10_dialog_permission
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
+import android.widget.TimePicker
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -105,6 +107,18 @@ class Ch10MainActivity : AppCompatActivity() {
 
             },2024,6,5).show()
         }
+
+
+        // 시간 데이터 피커 확인 해보기.
+        binding.ch10timeBtn2.setOnClickListener {
+            TimePickerDialog(this@Ch10MainActivity, object : TimePickerDialog.OnTimeSetListener {
+                override fun onTimeSet(p0: TimePicker?, hour: Int, minute: Int) {
+                    Log.d(TAG,"시간 , ${hour}시, ${minute}분")
+                    Toast.makeText(this@Ch10MainActivity,"시간 , ${hour}시, ${minute}분", Toast.LENGTH_LONG).show()
+                    binding.ch10timeResultTextView.text = "시간 , ${hour}시, ${minute}분"
+                }
+            }, 11,40,true).show()
+        } // 닫기
 
     }// onCreate
 }

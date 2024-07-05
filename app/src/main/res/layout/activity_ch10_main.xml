@@ -35,6 +35,21 @@
             android:text=""
             style="@style/MyTextStyle"/>
 
+
+        <Button
+            android:id="@+id/ch10timeBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="타임 피커 확인"
+            style="@style/MyTextStyle"/>
+
+        <TextView
+            android:id="@+id/ch10timeResultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
