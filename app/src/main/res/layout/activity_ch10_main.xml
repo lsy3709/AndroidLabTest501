@@ -86,6 +86,20 @@
             android:text=""
             style="@style/MyTextStyle"/>
 
+        <Button
+            android:id="@+id/ch10customDialBtn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="커스텀 다이얼로그 하나 선택 확인"
+            style="@style/MyTextStyle"/>
+
+        <TextView
+            android:id="@+id/ch10customResultTextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

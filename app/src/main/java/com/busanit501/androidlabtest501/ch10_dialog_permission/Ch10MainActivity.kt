@@ -227,6 +227,29 @@ class Ch10MainActivity : AppCompatActivity() {
             }
         }
 
+        // 하나 선택하기.
+        binding.ch10customDialBtn4.setOnClickListener {
+            AlertDialog.Builder(this@Ch10MainActivity).run {
+                setTitle("커스텀 다이얼로그 하나 체크")
+                setIcon(android.R.drawable.ic_dialog_info)
+
+                // 추가사항 , 메뉴 목록 추가
+                val objectListener = object : DialogInterface.OnClickListener {
+                    override fun onClick(p0: DialogInterface?, p1: Int) {
+                        Log.d(TAG,"선택한 점심 메뉴 : ${items[p1]}")
+                        binding.ch10customResultTextView.text = "${items[p1]}"
+                    }
+                } //objectListener
+
+//                setMultiChoiceItems(items, booleanArrayOf(false,false,false,false),objectListener)
+                setSingleChoiceItems(items,1,objectListener)
+                setPositiveButton("수락", null)
+                setNegativeButton("취소", null)
+                setNeutralButton("더보기", null)
+                show()
+            }
+        }
+
 
     }// onCreate
 }
