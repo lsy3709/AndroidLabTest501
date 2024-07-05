@@ -6,6 +6,8 @@ import android.app.TimePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -237,17 +239,30 @@ class Ch10MainActivity : AppCompatActivity() {
                 val objectListener = object : DialogInterface.OnClickListener {
                     override fun onClick(p0: DialogInterface?, p1: Int) {
                         Log.d(TAG,"선택한 점심 메뉴 : ${items[p1]}")
-                        binding.ch10customResultTextView.text = "${items[p1]}"
+                        binding.ch10customResultTextView3.text = "${items[p1]}"
                     }
                 } //objectListener
 
 //                setMultiChoiceItems(items, booleanArrayOf(false,false,false,false),objectListener)
+                // 뒤로 가기 버튼 터치시 알림창 끄기 옵션
+                setCancelable(false)
                 setSingleChoiceItems(items,1,objectListener)
                 setPositiveButton("수락", null)
                 setNegativeButton("취소", null)
                 setNeutralButton("더보기", null)
                 show()
-            }
+
+            }.setCanceledOnTouchOutside(false) // 알림 창 바깥부분 터치시 알림창 끄는 옵션
+        }
+
+
+        // 소리 알림음 테스트
+
+        binding.ch10soundBtn.setOnClickListener {
+            val notification : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            // this@Ch10MainActivity -> applicationContext, Context
+            val ringtone = RingtoneManager.getRingtone(this@Ch10MainActivity, notification)
+            ringtone.play()
         }
 
 
