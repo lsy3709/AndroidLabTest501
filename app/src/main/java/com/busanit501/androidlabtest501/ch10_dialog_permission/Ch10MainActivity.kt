@@ -52,6 +52,9 @@ class Ch10MainActivity : AppCompatActivity() {
             }
         }
 
+        //이용
+        requestPermissionLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
+
 
     }// onCreate
 }
