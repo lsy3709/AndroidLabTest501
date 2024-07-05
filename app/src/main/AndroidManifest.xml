@@ -2,28 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    퍼미션 관련 설정 예-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<!--미디어 정보 접근을 위한 퍼미션 변경 공식 문서-->
-<!--    https://developer.android.com/about/versions/14/changes/partial-photo-video-access?hl=ko-->
-
-    <!-- Devices running Android 12L (API level 32) or lower  -->
-
-<!--    알림 채널 관련 퍼미션 설정-->
+    <!-- 퍼미션 관련 설정 예 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 미디어 정보 접근을 위한 퍼미션 변경 공식 문서 -->
+    <!-- https://developer.android.com/about/versions/14/changes/partial-photo-video-access?hl=ko -->
+    <!-- Devices running Android 12L (API level 32) or lower -->
+    <!-- 알림 채널 관련 퍼미션 설정 -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-
-    <!-- Devices running Android 13 (API level 33) or higher -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" /> <!-- Devices running Android 13 (API level 33) or higher -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-<!--    <uses-permission android:name="android.permission.BATTERY_STATS"/>-->
-
-<!--    진동 관련 퍼미션 추가-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- <uses-permission android:name="android.permission.BATTERY_STATS"/> -->
+    <!-- 진동 관련 퍼미션 추가 -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -36,6 +30,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
+        <receiver
+            android:name=".ch10_dialog_permission.OneReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
         <activity
             android:name=".ch10_dialog_permission.Ch10MainActivity"
             android:exported="true" />

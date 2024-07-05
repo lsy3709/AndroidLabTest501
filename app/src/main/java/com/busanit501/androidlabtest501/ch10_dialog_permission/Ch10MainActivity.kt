@@ -373,7 +373,20 @@ class Ch10MainActivity : AppCompatActivity() {
             //1
             val intent = Intent(this@Ch10MainActivity,Lsy1205MainActivity::class.java)
             val pendingIntent = PendingIntent.getActivity(this@Ch10MainActivity,10, intent, PendingIntent.FLAG_IMMUTABLE)
-            builder.setContentIntent(pendingIntent)
+//            builder.setContentIntent(pendingIntent)
+
+            // 2, 추가 액션 기능 넣기.
+
+            val actionIntent = Intent(this@Ch10MainActivity,OneReceiver::class.java )
+            val actionPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,20,actionIntent,PendingIntent.FLAG_IMMUTABLE)
+            builder.addAction(
+                NotificationCompat.Action.Builder(
+                    android.R.drawable.stat_notify_more,
+                    "추가 액션1",
+                    actionPendingIntent
+                ).build()
+            )
+            builder.setContentIntent(actionPendingIntent)
 
 
             builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
