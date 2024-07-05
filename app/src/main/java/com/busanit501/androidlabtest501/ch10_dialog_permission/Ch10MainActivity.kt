@@ -63,29 +63,33 @@ class Ch10MainActivity : AppCompatActivity() {
         //이용
         requestPermissionLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
 
+        // 버튼 , 클릭시, 토스트 메세지 후처리 확인 해보기
+        binding.ch10sampleBtn.setOnClickListener {
+            // 토스트 메시지가 뜨고나서 후처리 액션, 사라지고 나서 후처리 액션,
+            val toast = Toast.makeText(this@Ch10MainActivity,"토스트 메세지 출력 또는 사라질 경우 후처리 동작 확인", Toast.LENGTH_LONG)
 
-        // 토스트 메시지가 뜨고나서 후처리 액션, 사라지고 나서 후처리 액션,
-        val toast = Toast.makeText(this@Ch10MainActivity,"토스트 메세지 출력 또는 사라질 경우 후처리 동작 확인", Toast.LENGTH_LONG)
+            //콜백 함수 추가하기.
+            toast.addCallback(
+                @RequiresApi(Build.VERSION_CODES.R)
+                object : Toast.Callback() {
+                    //나타 날 때, 후처리 동작 추가
+                    override fun onToastShown() {
+                        super.onToastShown()
+                        Log.d(TAG,"토스가 나타날 때 동작하는 로그")
+                        //화면 이동도 추가해보기.
+                        val intent = Intent(this@Ch10MainActivity, Lsy1205MainActivity::class.java)
+                        startActivity(intent)
+                    }
+                    //사라질 때, 후처리 동작 추가
+                    override fun onToastHidden() {
+                        super.onToastHidden()
+                        Log.d(TAG,"토스가 사라질 때 동작하는 로그")
+                    }
+                }
+            )
+            toast.show()
+        }
 
-        //콜백 함수 추가하기.
-        toast.addCallback(
-            @RequiresApi(Build.VERSION_CODES.R)
-            object : Toast.Callback() {
-                //나타 날 때, 후처리 동작 추가
-                override fun onToastShown() {
-                    super.onToastShown()
-                    Log.d(TAG,"토스가 나타날 때 동작하는 로그")
-                    //화면 이동도 추가해보기.
-                    val intent = Intent(this@Ch10MainActivity, Lsy1205MainActivity::class.java)
-                    startActivity(intent)
-                }
-                //사라질 때, 후처리 동작 추가
-                override fun onToastHidden() {
-                    super.onToastHidden()
-                    Log.d(TAG,"토스가 사라질 때 동작하는 로그")
-                }
-            }
-        )
-toast.show()
+
     }// onCreate
 }
