@@ -305,10 +305,14 @@ class Ch10MainActivity : AppCompatActivity() {
             }
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(
-                    VibrationEffect.createOneShot(500,
-                        VibrationEffect.DEFAULT_AMPLITUDE)
-                )
+                // 기본 진동이고
+//                vibrator.vibrate(
+//                    VibrationEffect.createOneShot(500,
+//                        VibrationEffect.DEFAULT_AMPLITUDE)
+//                )
+
+                // 진동에 특정 패턴 주기.
+                vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(500,1000,500,2000), intArrayOf(0,50,0,200), -1))
             } else {
                 vibrator.vibrate(500)
             }
