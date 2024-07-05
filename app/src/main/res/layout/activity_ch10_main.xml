@@ -120,6 +120,13 @@
             android:text="음악 미디어 소리 확인"
             style="@style/MyTextStyle"/>
 
+        <Button
+            android:id="@+id/ch10vibrateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="진동 확인"
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
     </ScrollView>
 

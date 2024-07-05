@@ -3,6 +3,7 @@ package com.busanit501.androidlabtest501.ch10_dialog_permission
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +12,9 @@ import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.widget.DatePicker
 import android.widget.TimePicker
@@ -21,6 +25,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.getSystemService
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
@@ -286,6 +291,27 @@ class Ch10MainActivity : AppCompatActivity() {
         binding.ch10soundBtn2.setOnClickListener {
             val player: MediaPlayer = MediaPlayer.create(this@Ch10MainActivity, R.raw.test_music)
             player.start()
+        }
+
+
+        // 진동 테스트
+        binding.ch10vibrateBtn.setOnClickListener {
+            val vibrator = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager = this.getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
+                as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
+
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(
+                    VibrationEffect.createOneShot(500,
+                        VibrationEffect.DEFAULT_AMPLITUDE)
+                )
+            } else {
+                vibrator.vibrate(500)
+            }
         }
 
     }// onCreate
