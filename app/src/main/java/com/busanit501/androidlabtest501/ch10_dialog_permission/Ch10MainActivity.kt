@@ -139,6 +139,10 @@ class Ch10MainActivity : AppCompatActivity() {
 
         // 커스텀 다이얼로그, 목록 요소 선택 처리.
         val items = arrayOf<String>("초밥","칼국수","두루치기","된장찌개")
+        var checkItems = mutableMapOf<Int,Int>()
+        var checkItems2 = mutableSetOf<Int>()
+        var tempList = mutableListOf<String>()
+        var resultStr :String =""
 
         binding.ch10customDialBtn2.setOnClickListener {
             AlertDialog.Builder(this@Ch10MainActivity).run {
@@ -170,16 +174,52 @@ class Ch10MainActivity : AppCompatActivity() {
                 setIcon(android.R.drawable.ic_dialog_info)
 
                 // 추가사항 , 메뉴 목록 추가
+                // 목록 요소를 클릭 할 때마다, 익명 클래스의 이벤트 리스너가 동작을함.
+                // 예) 체크, 언체크 반응을함.
+                // 클릭한 목록의 인덱스 의 번호 , 체크의 여부
                 val objectListener = object : DialogInterface.OnMultiChoiceClickListener {
                     override fun onClick(p0: DialogInterface?, which: Int, isChecked: Boolean) {
                         Log.d(TAG,"선택한 점심 메뉴 : ${items[which]}  ${if(isChecked) "선택됨" else "선택해제됨"}")
-                        binding.ch10customResultTextView2.text = "${items[which]}"
+                        if(isChecked){
+//                            checkItems.set(which,which)
+                            checkItems2.add(which)
+                            // 초밥 선택
+                            // checkItems2 = {0}
+                            // 칼국수 선택
+                            // checkItems2 = {0, 1}
+//                            for (i in 1..checkItems.size){
+//                                resultStr += "${items[checkItems.get(i)!!]}"
+//                            }
+                        } else if (checkItems2.size > 0) {
+//                            checkItems.remove(which)
+                            checkItems2.remove(which)
+                            // 초밥 선택 해제한 경우
+                            // checkItems2 = {1}
+
+                        }
+                        // checkItems2 = {1}
+                        resultStr =""
+                        for(index in checkItems2){
+                            if(checkItems2.size == 1 ){
+                                resultStr += items[index]
+                            } else{
+                                resultStr += items[index] + " "
+                            }
+
+                        }
+//                        for (i in 1..checkItems2.size){
+//                            resultStr += "${items[checkItems2.get(i)!!]}"
+//                        }
+
+                        Log.d(TAG,"선택한 점심 메뉴 :${resultStr} ")
+//                        binding.ch10customResultTextView2.text = "${items[which]}"
+                        binding.ch10customResultTextView2.text = resultStr
                     }
                 } //objectListener
 
                 // 이벤트 핸들러 추가 및 목록 넣기
 //                setItems(items,objectListener)
-                setMultiChoiceItems(items, booleanArrayOf(true,true,false,false),objectListener)
+                setMultiChoiceItems(items, booleanArrayOf(false,false,false,false),objectListener)
                 setPositiveButton("수락", null)
                 setNegativeButton("취소", null)
                 setNeutralButton("더보기", null)
