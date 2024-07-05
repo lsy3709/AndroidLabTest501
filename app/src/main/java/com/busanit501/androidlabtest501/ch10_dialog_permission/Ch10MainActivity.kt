@@ -99,11 +99,11 @@ class Ch10MainActivity : AppCompatActivity() {
             DatePickerDialog(this@Ch10MainActivity, object : DatePickerDialog.OnDateSetListener {
                 override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayofMonth: Int) {
                     Log.d(TAG,"년도 : ${year}년, 월 : ${month+1}월 , 일 : ${dayofMonth}일")
-                    Toast.makeText(this@Ch10MainActivity,"년도 : ${year}년, 월 : ${month+1}월 , 일 : ${dayofMonth}일", Toast.LENGTH_LONG)
+                    Toast.makeText(this@Ch10MainActivity,"년도 : ${year}년, 월 : ${month+1}월 , 일 : ${dayofMonth}일", Toast.LENGTH_LONG).show()
                     binding.ch10dateResultTextView.text = "${year}년, ${month+1}월 , ${dayofMonth}일"
                 }
 
-            },2024,7,5).show()
+            },2024,6,5).show()
         }
 
     }// onCreate
