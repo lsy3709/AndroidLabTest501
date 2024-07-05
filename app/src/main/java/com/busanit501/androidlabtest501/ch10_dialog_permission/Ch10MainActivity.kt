@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -366,6 +367,15 @@ class Ch10MainActivity : AppCompatActivity() {
             } else {
                 builder = NotificationCompat.Builder(this@Ch10MainActivity)
             }
+
+            // 알림 옵션 넣기
+            //알림 왔을 때, 클릭시, 특정 액티비티 화면 이동해보기.
+            //1
+            val intent = Intent(this@Ch10MainActivity,Lsy1205MainActivity::class.java)
+            val pendingIntent = PendingIntent.getActivity(this@Ch10MainActivity,10, intent, PendingIntent.FLAG_IMMUTABLE)
+            builder.setContentIntent(pendingIntent)
+
+
             builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
             builder.setWhen(System.currentTimeMillis())
             builder.setContentTitle("알림 테스트 제목")
@@ -375,6 +385,9 @@ class Ch10MainActivity : AppCompatActivity() {
             // 퍼미션 추가 필요해요. 매니페스트 파일
             manager.notify(11, builder.build())
         }
+
+
+
 
 
 
