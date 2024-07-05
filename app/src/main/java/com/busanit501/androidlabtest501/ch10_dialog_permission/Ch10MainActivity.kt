@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -119,6 +120,21 @@ class Ch10MainActivity : AppCompatActivity() {
                 }
             }, 11,40,true).show()
         } // 닫기
+
+        // 커스텀 한 다이얼로그 창 띄우기.
+        binding.ch10customDialBtn.setOnClickListener {
+            AlertDialog.Builder(this@Ch10MainActivity).run {
+                setTitle("커스텀 다이얼로그")
+                setIcon(android.R.drawable.ic_dialog_info)
+                setMessage("커스텀 다이얼로그 확인중~~~")
+                setPositiveButton("수락", null)
+                setNegativeButton("취소", null)
+                setNeutralButton("더보기", null)
+                show()
+            }
+
+        }
+
 
     }// onCreate
 }
