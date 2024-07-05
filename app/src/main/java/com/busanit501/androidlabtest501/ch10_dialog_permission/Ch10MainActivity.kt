@@ -408,7 +408,7 @@ class Ch10MainActivity : AppCompatActivity() {
                     replyPendingIntent
                 ).addRemoteInput(remoteInput).build()
             )
-            builder.setContentIntent(actionPendingIntent)
+            builder.setContentIntent(replyPendingIntent)
 
 
             builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
