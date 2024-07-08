@@ -140,12 +140,12 @@
             android:layout_height="wrap_content"
             style="@style/MyTextStyle"/>
 
-        <Button
-            android:id="@+id/ch10NotiProgressBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="진행 상태바 이벤트 확인 해보기"
-            style="@style/MyTextStyle"/>
+<!--        <Button-->
+<!--            android:id="@+id/ch10NotiProgressBtn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="진행 상태바 이벤트 확인 해보기"-->
+<!--            style="@style/MyTextStyle"/>-->
 
 
     </LinearLayout>

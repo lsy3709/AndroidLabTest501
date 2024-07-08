@@ -10,6 +10,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -396,17 +397,28 @@ class Ch10MainActivity : AppCompatActivity() {
 //            builder.setContentIntent(replyPendingIntent)
             // 옵션 닫기
 
+            // 옵션4
             // 프로그레스바 이용하기.
-            builder.setProgress(100,0,false)
-            //스레드 이용해서, 상태바의 게이지 올라가는 부분을 임시로 구현.
-            thread {
-                for (i in 1..100){
-//                    setProgress(max,progress,false)
-                    builder.setProgress(100,i,false)
-                    manager.notify(11,builder.build())
-                    SystemClock.sleep(100)
-                }
-            }
+//            builder.setProgress(100,0,false)
+//            //스레드 이용해서, 상태바의 게이지 올라가는 부분을 임시로 구현.
+//            thread {
+//                for (i in 1..100){
+////                    setProgress(max,progress,false)
+//                    builder.setProgress(100,i,false)
+//                    manager.notify(11,builder.build())
+//                    SystemClock.sleep(100)
+//                }
+//            }
+
+            // 옵션 5, 큰 이미지 넣기
+            val bigImg = BitmapFactory.decodeResource(resources, R.drawable.food1)
+            val bigImgStyle = NotificationCompat.BigPictureStyle()
+            bigImgStyle.bigPicture(bigImg)
+            builder.setStyle(bigImgStyle)
+
+            // 옵션 6, 긴 글 넣기
+
+            // 옵션 7 , 박스 형태 넣기.
 
 
             // 공통 내용.
