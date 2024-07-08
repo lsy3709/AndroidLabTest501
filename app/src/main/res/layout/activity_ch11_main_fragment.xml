@@ -18,7 +18,20 @@
             android:id="@+id/ch11FragmentView1"
             android:name="com.busanit501.androidlabtest501.ch11_jetpack.fragments.Ch11OneFragment"
             android:layout_width="match_parent"
-            android:layout_height="400dp"/>
+            android:layout_height="200dp"
+            />
+        <fragment
+            android:id="@+id/ch11FragmentView2"
+            android:name="com.busanit501.androidlabtest501.ch11_jetpack.fragments.Ch11TwoFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />
+        <fragment
+            android:id="@+id/ch11FragmentView3"
+            android:name="com.busanit501.androidlabtest501.ch11_jetpack.fragments.Ch11ThreeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />
 
 
 

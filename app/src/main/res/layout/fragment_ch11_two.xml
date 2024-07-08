@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:text="프래그먼트 2 화면"
         android:gravity="center"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:background="@color/sub_text_color"/>
 
 </FrameLayout>
