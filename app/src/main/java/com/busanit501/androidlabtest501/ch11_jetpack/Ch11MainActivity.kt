@@ -1,6 +1,7 @@
 package com.busanit501.androidlabtest501.ch11_jetpack
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,5 +28,15 @@ class Ch11MainActivity : AppCompatActivity() {
         //업버튼 화면 붙이기, 이벤트 작업 해보기.
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+
     } //onCreate
+
+    // 액션바의 업버튼(뒤로가기 버튼)이벤트 처리기 붙이기.
+    override fun onSupportNavigateUp(): Boolean {
+        Toast.makeText(this@Ch11MainActivity,"백버튼 동작여부",Toast.LENGTH_LONG).show()
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
 }
