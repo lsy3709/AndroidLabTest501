@@ -417,6 +417,11 @@ class Ch10MainActivity : AppCompatActivity() {
             builder.setStyle(bigImgStyle)
 
             // 옵션 6, 긴 글 넣기
+            val bigTextStyle = NotificationCompat.BigTextStyle()
+            // 화면에서는 , 리소스 자원 사용시, 바로 R.string.lunch_introduce_long
+            // 코드에서는, resources.getString(R.string.lunch_introduce_long)
+            bigTextStyle.bigText(resources.getString(R.string.lunch_introduce_long))
+            builder.setStyle(bigTextStyle)
 
             // 옵션 7 , 박스 형태 넣기.
 
