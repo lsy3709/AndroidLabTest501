@@ -35,6 +35,7 @@ class Ch11MainToolBarActivity : AppCompatActivity() {
         }
 
         //툴바 붙이기 작업.
+        // 순서3
         setSupportActionBar(binding.ch11toolbarSample)
 
 
@@ -48,8 +49,10 @@ class Ch11MainToolBarActivity : AppCompatActivity() {
         return super.onSupportNavigateUp()
     }
 
+    // 툴바 붙이기 순서4
     // 액션바에 메인 메뉴 뷰 넣기.
     // 검색 뷰에 관한 이벤트 추가하기.
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         //메뉴 아이템 붙이기.
@@ -84,6 +87,7 @@ class Ch11MainToolBarActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    // 툴바 순서 5, 아이템 요소 클릭시 이벤트 처리기 붙이기.
     // 액션바의 오버 플로우 안의 메뉴 클릭시 이벤트 처리 하기.
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        툴바 붙이기 -->
+<!--        툴바 붙이기, 순서1 -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/ch11toolbarSample"
             android:layout_width="match_parent"
