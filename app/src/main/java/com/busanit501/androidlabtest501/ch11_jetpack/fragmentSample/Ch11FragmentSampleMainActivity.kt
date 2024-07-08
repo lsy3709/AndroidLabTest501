@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.busanit501.androidlabtest501.R
 
 class Ch11FragmentSampleMainActivity : AppCompatActivity() {
-    private val fragments = listOf(SecondFragment(), ThirdFragment(), FourthFragment())
+    private val fragments = listOf(FirstFragment(), SecondFragment(), ThirdFragment(), FourthFragment())
     private var currentFragmentIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
