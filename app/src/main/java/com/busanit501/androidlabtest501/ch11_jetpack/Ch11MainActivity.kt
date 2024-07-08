@@ -1,6 +1,7 @@
 package com.busanit501.androidlabtest501.ch11_jetpack
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -39,4 +40,15 @@ class Ch11MainActivity : AppCompatActivity() {
         return super.onSupportNavigateUp()
     }
 
-}
+    // 액션바에 뷰 넣기.
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        //메뉴 아이템 붙이기.
+        menuInflater.inflate(R.menu.ch11_menu_main,menu)
+//        val menuItem = menu.
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+} //Ch11MainActivity

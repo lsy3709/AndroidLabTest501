@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/ch11MenuItem1"
         android:title="로그인"/>
+
+    <item
+        android:id="@+id/ch11MenuItem2"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="회원가입"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/ch11MenuItem3"
+        android:icon="@android:drawable/arrow_up_float"
+        android:title="게시판"
+        app:showAsAction="ifRoom"
+        />
+
 
 </menu>
