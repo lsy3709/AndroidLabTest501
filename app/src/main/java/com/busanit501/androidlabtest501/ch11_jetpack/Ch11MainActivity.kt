@@ -1,7 +1,9 @@
 package com.busanit501.androidlabtest501.ch11_jetpack
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
 import com.busanit501.androidlabtest501.databinding.ActivityCh11MainBinding
+import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205JoinActivity
+import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205LoginActivity
+import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205MainActivity
 
 class Ch11MainActivity : AppCompatActivity() {
 
@@ -40,7 +45,7 @@ class Ch11MainActivity : AppCompatActivity() {
         return super.onSupportNavigateUp()
     }
 
-    // 액션바에 뷰 넣기.
+    // 액션바에 메인 메뉴 뷰 넣기.
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         //메뉴 아이템 붙이기.
@@ -48,6 +53,33 @@ class Ch11MainActivity : AppCompatActivity() {
 //        val menuItem = menu.
 
         return super.onCreateOptionsMenu(menu)
+    }
+
+    // 액션바의 오버 플로우 안의 메뉴 클릭시 이벤트 처리 하기.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
+
+        R.id.ch11MenuItemLogin -> {
+            val intent = Intent(this@Ch11MainActivity, Lsy1205LoginActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
+        R.id.ch11MenuItemJoin -> {
+            val intent = Intent(this@Ch11MainActivity, Lsy1205JoinActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
+        R.id.ch11MenuItemBoard -> {
+            val intent = Intent(this@Ch11MainActivity, Lsy1205MainActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+
     }
 
 

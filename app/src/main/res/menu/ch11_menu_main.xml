@@ -3,20 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/ch11MenuItem1"
+        android:id="@+id/ch11MenuItemLogin"
         android:title="로그인"/>
 
     <item
-        android:id="@+id/ch11MenuItem2"
+        android:id="@+id/ch11MenuItemJoin"
         android:icon="@android:drawable/ic_menu_add"
         android:title="회원가입"
-        app:showAsAction="always"
+
         />
     <item
-        android:id="@+id/ch11MenuItem3"
+        android:id="@+id/ch11MenuItemBoard"
         android:icon="@android:drawable/arrow_up_float"
         android:title="게시판"
-        app:showAsAction="ifRoom"
         />
 
 
