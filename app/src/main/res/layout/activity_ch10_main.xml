@@ -134,6 +134,13 @@
             android:text="알림 확인"
             style="@style/MyTextStyle"/>
 
+        <TextView
+            android:id="@+id/ch10remoteInputMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextStyle"/>
+
+
     </LinearLayout>
     </ScrollView>
 

@@ -9,7 +9,11 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.RemoteInput
+import com.busanit501.androidlabtest501.databinding.ActivityCh10MainBinding
 
+// 4대 컴포넌트, 브로드캐스트 리시버,
+// 뉴 -> Other -> Broadcast Reciever 선택. 만들어야,
+// 매니패스트에 자동 등록.
 class ReplyReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -18,6 +22,7 @@ class ReplyReceiver : BroadcastReceiver() {
 
         val manager = context.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager
         val builder : NotificationCompat.Builder
+
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val channelId = "one-channel"
@@ -35,6 +40,7 @@ class ReplyReceiver : BroadcastReceiver() {
             builder.setWhen(System.currentTimeMillis())
             builder.setContentTitle("Content Title")
             builder.setContentText("Content Massage : ${replyText}")
+
 
             manager.notify(11, builder.build())
         }
