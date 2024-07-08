@@ -295,12 +295,17 @@ class Ch10MainActivity : AppCompatActivity() {
             }
         }
 
+        // 알림음 관련 설정.
+
         binding.ch10NotificationBtn.setOnClickListener {
             //알림 채널 설정.
+            // 시스템 클래스 이용해서, 준비물1
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            // 시스템 클래스 이용해서, 준비물2
             val builder : NotificationCompat.Builder
             // api 레벨 26 이상일 때, 채널 설정 코드가 추가되어서, 변경됨.
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                // 26 이상은 채널을 이용해서, 추가 옵션.
                 val channelId = "one-channel"
                 val channelName = "My Channel One"
                 val channel = NotificationChannel(
@@ -309,31 +314,42 @@ class Ch10MainActivity : AppCompatActivity() {
 
                 // 채널 정보 설정.
                 channel.description = "My Channel Test"
+                // 아이콘 대각선 상단에 작은 알림 갯수 표시
                 channel.setShowBadge(true)
+                // 소리 , 알림음 설정.
                 val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
                 val audioAttributes = AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .setUsage(AudioAttributes.USAGE_ALARM)
                     .build()
 
+                // 옵션에 추가, 소리 관련 옵션
                 channel.setSound(uri,audioAttributes)
+                // 후레쉬 부분은 led 표기 여부
                 channel.enableLights(true)
+                // 액정 화면에 알림 왔을 때, 색깔 여부.
                 channel.lightColor = Color.RED
+                // 진동 여부.
                 channel.enableVibration(true)
                 channel.vibrationPattern = longArrayOf(100,200,100,200)
 
+                // 채널 옵션을 장착
                 manager.createNotificationChannel(channel)
-
+// this : 화면에서 본인 화면,
                 builder = NotificationCompat.Builder(this@Ch10MainActivity,channelId)
             } else {
+                // api 레벨 26 미만일 경우, 핸드폰의 sdk의 버전을 고려해주기. , 채널 사용 안함.
                 builder = NotificationCompat.Builder(this@Ch10MainActivity)
             }
 
             // 알림 옵션 넣기
             //알림 왔을 때, 클릭시, 특정 액티비티 화면 이동해보기.
             //1
-            val intent = Intent(this@Ch10MainActivity,Lsy1205MainActivity::class.java)
-            val pendingIntent = PendingIntent.getActivity(this@Ch10MainActivity,10, intent, PendingIntent.FLAG_IMMUTABLE)
+            // 화면 이동시, 인텐트를 이용해서, 시스템에게 주문,
+            // 현재화면, 이동할 화면, -> 단순 화면이동, 조금 있다. 데이터도 같이 전달할 예정.
+            //
+//            val intent = Intent(this@Ch10MainActivity,Lsy1205MainActivity::class.java)
+//            val pendingIntent = PendingIntent.getActivity(this@Ch10MainActivity,10, intent, PendingIntent.FLAG_IMMUTABLE)
 //            builder.setContentIntent(pendingIntent)
 
             // 2, 추가 액션 기능 넣기.
@@ -347,35 +363,40 @@ class Ch10MainActivity : AppCompatActivity() {
                     actionPendingIntent
                 ).build()
             )
-//            builder.setContentIntent(actionPendingIntent)
+            builder.setContentIntent(actionPendingIntent)
 
             // 3
             // 추가 액션 넣기, 답글 입력폼 추가
-            val KEY_TEXT_REPLY = "key_text_reply"
-            val replyLabel : String = "답장"
-            var remoteInput : RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
-                setLabel(replyLabel)
-                build()
-            }
+//            val KEY_TEXT_REPLY = "key_text_reply"
+//            val replyLabel : String = "답장"
+//            var remoteInput : RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
+//                setLabel(replyLabel)
+//                build()
+//            }
+//
+//            val replyIntent = Intent(this@Ch10MainActivity, ReplyReceiver::class.java)
+//            //오타 주의, PendingIntent.FLAG_MUTABLE
+//            val replyPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,30,replyIntent,PendingIntent.FLAG_MUTABLE)
+//            // 답장 액션 추가하기.
+//            builder.addAction(
+//                NotificationCompat.Action.Builder(
+//                    android.R.drawable.stat_notify_more,
+//                    "답장",
+//                    replyPendingIntent
+//                ).addRemoteInput(remoteInput).build()
+//            )
+//            builder.setContentIntent(replyPendingIntent)
+            // 옵션 닫기
 
-            val replyIntent = Intent(this@Ch10MainActivity, ReplyReceiver::class.java)
-            //오타 주의, PendingIntent.FLAG_MUTABLE
-            val replyPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,30,replyIntent,PendingIntent.FLAG_MUTABLE)
-            // 답장 액션 추가하기.
-            builder.addAction(
-                NotificationCompat.Action.Builder(
-                    android.R.drawable.stat_notify_more,
-                    "답장",
-                    replyPendingIntent
-                ).addRemoteInput(remoteInput).build()
-            )
-            builder.setContentIntent(replyPendingIntent)
 
-
+            // 공통 내용.
+            // 알림음 아이콘 표기
             builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
+            // 알림 온 시간
             builder.setWhen(System.currentTimeMillis())
-            builder.setContentTitle("알림 테스트 제목")
-            builder.setContentText("알림 테스트 본문 내용, 조금만 힘내자!!집에가자.힘나죠?")
+            // 알림의 메세지 , 제목
+            builder.setContentTitle("날씨가 매운 습도가 높습니다. 강의장 쾌적해요.!!")
+            builder.setContentText("오늘 점심 뭐 먹죠?")
 
             // 알림 발생 시키기
             // 퍼미션 추가 필요해요. 매니페스트 파일
