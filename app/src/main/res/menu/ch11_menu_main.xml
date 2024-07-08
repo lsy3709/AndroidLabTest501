@@ -15,8 +15,15 @@
     <item
         android:id="@+id/ch11MenuItemBoard"
         android:icon="@android:drawable/arrow_up_float"
-        android:title="게시판"
+        android:title="메인화면"
         />
+
+<!--    제트팩에서 지원하는 검색 화면-->
+    <item
+        android:id="@+id/ch11MenuItemSearch"
+        android:title="검색"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
 
 </menu>
