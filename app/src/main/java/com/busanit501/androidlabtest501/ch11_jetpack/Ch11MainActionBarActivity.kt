@@ -28,7 +28,7 @@ class Ch11MainActionBarActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityCh11MainBinding.inflate(layoutInflater)
 
-        TAG = "Ch11MainActivity"
+        TAG = "Ch11MainActionBarActivity"
 
         setContentView(binding.root)
 //        setContentView(R.layout.activity_ch11_main)
