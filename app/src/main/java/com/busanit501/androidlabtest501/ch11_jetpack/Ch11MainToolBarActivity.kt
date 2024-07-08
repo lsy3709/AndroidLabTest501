@@ -22,6 +22,11 @@ class Ch11MainToolBarActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //툴바 붙이기 작업.
+        setSupportActionBar(binding.ch11toolbarSample)
+
+
     } //onCreate
 
 
