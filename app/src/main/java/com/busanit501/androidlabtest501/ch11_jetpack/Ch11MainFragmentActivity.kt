@@ -52,7 +52,10 @@ class Ch11MainFragmentActivity : AppCompatActivity() {
 
         // 뷰 페이저2, 프래그먼트 전달시, 다시 재확인
         // 생명주기랑 관련이 있음.
-        transaction.addToBackStack(null)
+        // 잠시 대기.
+        // 교체 작업시, 사용 다시 해보기.
+//        transaction.addToBackStack(null)
+
 
         // 화면에 반영하기.
         transaction.commit()
