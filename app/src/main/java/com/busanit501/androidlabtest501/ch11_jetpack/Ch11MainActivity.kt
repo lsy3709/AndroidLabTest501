@@ -2,8 +2,10 @@ package com.busanit501.androidlabtest501.ch11_jetpack
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,11 +20,15 @@ import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy120
 class Ch11MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityCh11MainBinding
+    lateinit var TAG : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityCh11MainBinding.inflate(layoutInflater)
+
+        TAG = "Ch11MainActivity"
+
         setContentView(binding.root)
 //        setContentView(R.layout.activity_ch11_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -46,11 +52,31 @@ class Ch11MainActivity : AppCompatActivity() {
     }
 
     // 액션바에 메인 메뉴 뷰 넣기.
+    // 검색 뷰에 관한 이벤트 추가하기.
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         //메뉴 아이템 붙이기.
         menuInflater.inflate(R.menu.ch11_menu_main,menu)
-//        val menuItem = menu.
+
+        // 검색 뷰 이벤트 추가하기.
+        val menuItem = menu?.findItem(R.id.ch11MenuItemSearch)
+        // 메뉴 아이템 우리가 작업할 타입으로 형변환
+        val searchView = menuItem?.actionView as SearchView
+        // object : SearchView.OnQueryTextListener
+        // 익명 클래스 , 상속 또는 인터페이스 구현을 의미.
+        searchView.setOnClickListener { object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(submitText: String?): Boolean {
+                Log.d("TAG","검색 텍스트 이벤트 확인: ${submitText}")
+                Toast.makeText(this@Ch11MainActivity,"검색 내용: ${submitText}",Toast.LENGTH_LONG).show()
+                return true
+            }
+
+            override fun onQueryTextChange(inputText: String?): Boolean {
+                TODO("Not yet implemented")
+                Log.d("TAG","변경된 텍스트 이벤트 확인: ${inputText}")
+                return true
+            }
+        } }
 
         return super.onCreateOptionsMenu(menu)
     }
