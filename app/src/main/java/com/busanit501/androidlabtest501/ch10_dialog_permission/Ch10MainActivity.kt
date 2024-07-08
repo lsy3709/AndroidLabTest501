@@ -424,6 +424,14 @@ class Ch10MainActivity : AppCompatActivity() {
             builder.setStyle(bigTextStyle)
 
             // 옵션 7 , 박스 형태 넣기.
+            val boxStyle = NotificationCompat.InboxStyle()
+            boxStyle.addLine("점심 메뉴: 밀면")
+            boxStyle.addLine("점심 메뉴: 잡채밥")
+            boxStyle.addLine("점심 메뉴: 국밥")
+            boxStyle.addLine("점심 메뉴: 된장찌개")
+            boxStyle.addLine("점심 메뉴: 돈까스")
+            boxStyle.addLine("점심 메뉴: 라멘야")
+            builder.setStyle(boxStyle)
 
 
             // 공통 내용.
