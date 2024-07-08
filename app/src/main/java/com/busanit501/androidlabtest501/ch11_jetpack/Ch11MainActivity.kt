@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.SearchView
+
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
@@ -61,22 +63,24 @@ class Ch11MainActivity : AppCompatActivity() {
         // 검색 뷰 이벤트 추가하기.
         val menuItem = menu?.findItem(R.id.ch11MenuItemSearch)
         // 메뉴 아이템 우리가 작업할 타입으로 형변환
+        //SearchView : 타입은 androidx.appcompat.widget.SearchView 이용하기. 주의사항
         val searchView = menuItem?.actionView as SearchView
         // object : SearchView.OnQueryTextListener
         // 익명 클래스 , 상속 또는 인터페이스 구현을 의미.
-        searchView.setOnClickListener { object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(submitText: String?): Boolean {
-                Log.d("TAG","검색 텍스트 이벤트 확인: ${submitText}")
-                Toast.makeText(this@Ch11MainActivity,"검색 내용: ${submitText}",Toast.LENGTH_LONG).show()
-                return true
-            }
+       searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+           override fun onQueryTextSubmit(query: String?): Boolean {
+               Log.d(TAG,"검색 텍스트 이벤트 확인: ${query}")
+               Toast.makeText(this@Ch11MainActivity,"검색 내용: ${query}",Toast.LENGTH_LONG).show()
+               return true
+           }
 
-            override fun onQueryTextChange(inputText: String?): Boolean {
-                TODO("Not yet implemented")
-                Log.d("TAG","변경된 텍스트 이벤트 확인: ${inputText}")
-                return true
-            }
-        } }
+           override fun onQueryTextChange(newText: String?): Boolean {
+               Log.d(TAG,"변경된 텍스트 이벤트 확인: ${newText}")
+               return true
+           }
+
+
+       })
 
         return super.onCreateOptionsMenu(menu)
     }
