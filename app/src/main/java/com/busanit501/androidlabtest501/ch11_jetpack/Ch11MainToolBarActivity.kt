@@ -6,16 +6,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.databinding.ActivityCh11Main2Binding
 
-class Ch11Main2Activity : AppCompatActivity() {
+class Ch11MainToolBarActivity : AppCompatActivity() {
+    lateinit var binding: ActivityCh11Main2Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_ch11_main2)
+        binding = ActivityCh11Main2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+//        setContentView(R.layout.activity_ch11_main2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-}
+    } //onCreate
+
+
+
+
+} //Ch11MainToolBarActivity

@@ -5,12 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch11_jetpack.Ch11Main2Activity">
+    tools:context=".ch11_jetpack.Ch11MainToolBarActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+<!--        툴바 붙이기 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ch11toolbarSample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextStyle"/>
+
+
+
 
         <Button
             android:layout_marginTop="100dp"

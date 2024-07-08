@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
@@ -19,7 +18,7 @@ import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy120
 import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205LoginActivity
 import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205MainActivity
 
-class Ch11MainActivity : AppCompatActivity() {
+class Ch11MainActionBarActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityCh11MainBinding
     lateinit var TAG : String
@@ -48,7 +47,7 @@ class Ch11MainActivity : AppCompatActivity() {
 
     // 액션바의 업버튼(뒤로가기 버튼)이벤트 처리기 붙이기.
     override fun onSupportNavigateUp(): Boolean {
-        Toast.makeText(this@Ch11MainActivity,"백버튼 동작여부",Toast.LENGTH_LONG).show()
+        Toast.makeText(this@Ch11MainActionBarActivity,"백버튼 동작여부",Toast.LENGTH_LONG).show()
         onBackPressed()
         return super.onSupportNavigateUp()
     }
@@ -70,7 +69,7 @@ class Ch11MainActivity : AppCompatActivity() {
        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
            override fun onQueryTextSubmit(query: String?): Boolean {
                Log.d(TAG,"검색 텍스트 이벤트 확인: ${query}")
-               Toast.makeText(this@Ch11MainActivity,"검색 내용: ${query}",Toast.LENGTH_LONG).show()
+               Toast.makeText(this@Ch11MainActionBarActivity,"검색 내용: ${query}",Toast.LENGTH_LONG).show()
                return true
            }
 
@@ -89,19 +88,19 @@ class Ch11MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 
         R.id.ch11MenuItemLogin -> {
-            val intent = Intent(this@Ch11MainActivity, Lsy1205LoginActivity::class.java)
+            val intent = Intent(this@Ch11MainActionBarActivity, Lsy1205LoginActivity::class.java)
             startActivity(intent)
             true
         }
 
         R.id.ch11MenuItemJoin -> {
-            val intent = Intent(this@Ch11MainActivity, Lsy1205JoinActivity::class.java)
+            val intent = Intent(this@Ch11MainActionBarActivity, Lsy1205JoinActivity::class.java)
             startActivity(intent)
             true
         }
 
         R.id.ch11MenuItemBoard -> {
-            val intent = Intent(this@Ch11MainActivity, Lsy1205MainActivity::class.java)
+            val intent = Intent(this@Ch11MainActionBarActivity, Lsy1205MainActivity::class.java)
             startActivity(intent)
             true
         }
