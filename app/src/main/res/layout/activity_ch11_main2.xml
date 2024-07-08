@@ -28,6 +28,23 @@
             android:layout_height="wrap_content"
             android:text="샘플버튼1"/>
 
+        <TextView
+            android:id="@+id/ch11normalTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘은 된장찌개 먹음"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ch11CompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘은 된장찌개 먹음"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

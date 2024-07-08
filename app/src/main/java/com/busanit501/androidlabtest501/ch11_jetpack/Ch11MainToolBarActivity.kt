@@ -39,6 +39,14 @@ class Ch11MainToolBarActivity : AppCompatActivity() {
         setSupportActionBar(binding.ch11toolbarSample)
 
 
+        //일반 텍스트 뷰와, 호환성을 고려한 뷰의 차이점 확인.
+//        binding.ch11normalTextView.lineHeight = 100
+
+        binding.ch11CompatTextView.lineHeight = 100
+
+
+
+
     } //onCreate
 
     //액션바에서, 메뉴 아이템 붙이는 작업과, 이벤트 핸들러도 거의 비슷 재사용.
