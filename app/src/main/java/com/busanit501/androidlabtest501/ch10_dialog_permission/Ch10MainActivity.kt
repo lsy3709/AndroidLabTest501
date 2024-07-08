@@ -17,6 +17,7 @@ import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
@@ -38,6 +39,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
 import com.busanit501.androidlabtest501.databinding.ActivityCh10MainBinding
 import com.busanit501.androidlabtest501.miniProject.test0703.lsy1205_mini.Lsy1205MainActivity
+import kotlin.concurrent.thread
 
 class Ch10MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityCh10MainBinding
@@ -368,31 +370,43 @@ class Ch10MainActivity : AppCompatActivity() {
             // 3
             // 추가 액션 넣기, 답글 입력폼 추가
             // 통신을 하기 위한 정해둔 키, 서로가 일치 해야함.
-            val KEY_TEXT_REPLY = "key_text_reply"
-            // 알림 창에 표기할 액션의 이름
-            val replyLabel : String = "답장"
-            // 시스템에서 제공 해주는 원격지, 채팅 입력창 비슷.
-            var remoteInput : RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
-                setLabel(replyLabel)
-                build()
-            }
-
-            // 현재 페이지, 2번째 매개변수 페이지로 이동 해주세요. 시스템에게 전달하기.
-            // 편지봉투, 주문서
-            val replyIntent = Intent(this@Ch10MainActivity, ReplyReceiver::class.java)
-            //오타 주의, PendingIntent.FLAG_MUTABLE
-            // getBroadcast -> 브로드캐스트 리시버, 4대 컴포넌트, 용도 : 전체 시스템에게 전달하는 용도.
-            val replyPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,30,replyIntent,PendingIntent.FLAG_MUTABLE)
-            // 답장 액션 추가하기.
-            builder.addAction(
-                NotificationCompat.Action.Builder(
-                    android.R.drawable.stat_notify_more,
-                    "답장",
-                    replyPendingIntent
-                ).addRemoteInput(remoteInput).build()
-            )
-            builder.setContentIntent(replyPendingIntent)
+//            val KEY_TEXT_REPLY = "key_text_reply"
+//            // 알림 창에 표기할 액션의 이름
+//            val replyLabel : String = "답장"
+//            // 시스템에서 제공 해주는 원격지, 채팅 입력창 비슷.
+//            var remoteInput : RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
+//                setLabel(replyLabel)
+//                build()
+//            }
+//
+//            // 현재 페이지, 2번째 매개변수 페이지로 이동 해주세요. 시스템에게 전달하기.
+//            // 편지봉투, 주문서
+//            val replyIntent = Intent(this@Ch10MainActivity, ReplyReceiver::class.java)
+//            //오타 주의, PendingIntent.FLAG_MUTABLE
+//            // getBroadcast -> 브로드캐스트 리시버, 4대 컴포넌트, 용도 : 전체 시스템에게 전달하는 용도.
+//            val replyPendingIntent = PendingIntent.getBroadcast(this@Ch10MainActivity,30,replyIntent,PendingIntent.FLAG_MUTABLE)
+//            // 답장 액션 추가하기.
+//            builder.addAction(
+//                NotificationCompat.Action.Builder(
+//                    android.R.drawable.stat_notify_more,
+//                    "답장",
+//                    replyPendingIntent
+//                ).addRemoteInput(remoteInput).build()
+//            )
+//            builder.setContentIntent(replyPendingIntent)
             // 옵션 닫기
+
+            // 프로그레스바 이용하기.
+            builder.setProgress(100,0,false)
+            //스레드 이용해서, 상태바의 게이지 올라가는 부분을 임시로 구현.
+            thread {
+                for (i in 1..100){
+//                    setProgress(max,progress,false)
+                    builder.setProgress(100,i,false)
+                    manager.notify(11,builder.build())
+                    SystemClock.sleep(100)
+                }
+            }
 
 
             // 공통 내용.

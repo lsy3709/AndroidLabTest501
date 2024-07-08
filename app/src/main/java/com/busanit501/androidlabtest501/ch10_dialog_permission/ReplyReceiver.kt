@@ -18,6 +18,7 @@ class ReplyReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
+        // 알림 창에서, 원격지 채팅 메세지를 받아서 임시로 저장하는 상수
         val replyText = RemoteInput.getResultsFromIntent(intent)?.getCharSequence("key_text_reply")
 
         val manager = context.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager
