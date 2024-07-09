@@ -95,7 +95,19 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         binding.ch11RecyclerSample4.layoutManager = layoutManager4
 
         // 어댑터 붙이기.
-        binding.ch11RecyclerSample4.adapter = Ch11MyAdapterSample3(testDataSet)
+        val customAdapter = Ch11MyAdapterSample3(testDataSet)
+        binding.ch11RecyclerSample4.adapter = customAdapter
+
+        // 버튼에 이벤트 핸들러 추가해서, 추가, 삭제 기능 구현.
+        binding.ch11recyclerDataAddBtn.setOnClickListener {
+            testDataSet.add("내일 점심 뭐 먹지" + newDataNumber++)
+            customAdapter.notifyItemInserted(testDataSet.size)
+        }
+
+        binding.ch11recyclerDataRemoveBtn.setOnClickListener {
+            testDataSet.removeAt(testDataSet.size - 1)
+            customAdapter.notifyDataSetChanged()
+        }
 
 
     } //onCreate
