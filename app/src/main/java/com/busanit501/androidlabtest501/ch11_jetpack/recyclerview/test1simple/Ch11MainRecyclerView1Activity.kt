@@ -47,7 +47,7 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         //샘플 더미 데이터 넣기.
         val datas2 = mutableListOf<String>()
         for(i in 1..10) {
-            datas.add("오늘 점심 뭐먹지2 ? $i")
+            datas2.add("오늘 점심 뭐먹지2 ? $i")
         }
 
         //리사이클러뷰 , 어떤 모양으로 배치할지 정하기.
