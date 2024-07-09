@@ -30,5 +30,11 @@ class Ch11MyAdapterSample3(val datas: MutableList<String> ) : RecyclerView.Adapt
         binding.ch11ItemRoot2.setOnClickListener {
             Log.d("lsy", "목록 요소가 클릭됨 : $position")
         }
+    } //onBindViewHolder
+
+
+    fun removeItem(position: Int) {
+        datas.removeAt(position)
+        notifyItemRemoved(position)
     }
 }

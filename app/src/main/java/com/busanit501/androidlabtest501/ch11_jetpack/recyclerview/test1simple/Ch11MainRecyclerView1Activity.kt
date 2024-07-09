@@ -101,12 +101,19 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         // 버튼에 이벤트 핸들러 추가해서, 추가, 삭제 기능 구현.
         binding.ch11recyclerDataAddBtn.setOnClickListener {
             testDataSet.add("내일 점심 뭐 먹지" + newDataNumber++)
+            // 추가할 때, notifyDataSetChanged -> notifyItemInserted
             customAdapter.notifyItemInserted(testDataSet.size)
         }
 
         binding.ch11recyclerDataRemoveBtn.setOnClickListener {
-            testDataSet.removeAt(testDataSet.size - 1)
-            customAdapter.notifyDataSetChanged()
+//            testDataSet.removeAt(testDataSet.size - 1)
+            // 삭제할 때, notifyItemRemoved 이용해서 작업.
+//            customAdapter.notifyDataSetChanged()
+
+            val position = testDataSet.size - 1
+            if(position >= 0) {
+                customAdapter.removeItem(position)
+            }
         }
 
 
