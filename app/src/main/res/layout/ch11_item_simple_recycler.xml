@@ -3,15 +3,17 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="500dp"
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/ch11RecyclerItemImg"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/food2"/>
 
     <TextView
+        android:id="@+id/ch11RecyclerItemTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
