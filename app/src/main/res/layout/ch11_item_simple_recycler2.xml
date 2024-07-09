@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--리사이클러뷰의 목록 요소 뷰-->
 <LinearLayout
+    android:id="@+id/ch11ItemRoot"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"

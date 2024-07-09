@@ -32,6 +32,14 @@
                 style="@style/MyTextStyle"/>
 
 
+            <!--            리사이클러뷰2 넣기. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ch11RecyclerSample2"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+
+                />
+
         </LinearLayout>
 
     </ScrollView>

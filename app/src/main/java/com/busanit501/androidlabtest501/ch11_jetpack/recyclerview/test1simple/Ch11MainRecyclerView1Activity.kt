@@ -43,6 +43,21 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         binding.ch11RecyclerSample1.adapter = Ch11MyAdapterSample(datas)
 
 
+        // 2번째 리사이클러뷰 붙이기 작업, 더미 데이터 추가.
+        //샘플 더미 데이터 넣기.
+        val datas2 = mutableListOf<String>()
+        for(i in 1..10) {
+            datas.add("오늘 점심 뭐먹지2 ? $i")
+        }
+
+        //리사이클러뷰 , 어떤 모양으로 배치할지 정하기.
+        // 세로 방향, 가로 방향, 지그재그, 그리드 등.
+        val layoutManager2 = LinearLayoutManager(this@Ch11MainRecyclerView1Activity)
+        layoutManager2.orientation = LinearLayoutManager.VERTICAL
+        binding.ch11RecyclerSample2.layoutManager = layoutManager2
+
+        // 어댑터 붙이기.
+        binding.ch11RecyclerSample2.adapter = Ch11MyAdapterSample2(datas2)
 
     } //onCreate
 }
