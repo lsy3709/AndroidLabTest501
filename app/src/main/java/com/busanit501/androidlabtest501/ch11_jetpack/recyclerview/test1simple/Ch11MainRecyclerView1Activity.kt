@@ -122,11 +122,11 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         // 5번째 리사이클러뷰
         // 3번째 리사이클러뷰 재사용. 어댑터 , 뷰홀더 , 목록의요소도 재사용
         val layoutManager5 = GridLayoutManager(this@Ch11MainRecyclerView1Activity
-        ,2, GridLayoutManager.HORIZONTAL,false)
+        ,2, GridLayoutManager.VERTICAL,false)
         binding.ch11RecyclerSample5.layoutManager = layoutManager5
 
         // 어댑터 붙이기.
-        val customAdapter2 = Ch11MyAdapterSample3(testDataSet)
+        val customAdapter2 = Ch11MyAdapterSample4(datas3)
         binding.ch11RecyclerSample5.adapter = customAdapter2
 
 
