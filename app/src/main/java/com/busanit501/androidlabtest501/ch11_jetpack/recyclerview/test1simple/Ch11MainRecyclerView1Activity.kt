@@ -14,6 +14,10 @@ import com.busanit501.androidlabtest501.databinding.ActivityCh11MainRecyclerView
 class Ch11MainRecyclerView1Activity : AppCompatActivity() {
     lateinit var binding: ActivityCh11MainRecyclerView1Binding
 
+    //데이터 추가 및 삭제 테스트
+    // 순서1
+    var newDataNumber = 100
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +30,15 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //데이터 추가 및 삭제 테스트
+        //순서2
+        // 더미 데이터 만들기.
+        val testDataSet = mutableListOf<String>()
+        for (i in 0..10){
+            testDataSet.add("오늘 점심 ? 설렁탕 $i")
+        }
+
 
         //샘플 더미 데이터 넣기.
         val datas = mutableListOf<String>()
@@ -58,6 +71,23 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
 
         // 어댑터 붙이기.
         binding.ch11RecyclerSample2.adapter = Ch11MyAdapterSample2(datas2)
+
+
+        // 3번째 리사이클러뷰
+        val datas3 = mutableListOf<String>()
+        for(i in 1..10) {
+            datas3.add("오늘 점심 뭐먹지2 ? $i")
+        }
+
+        //리사이클러뷰 , 어떤 모양으로 배치할지 정하기.
+        // 세로 방향, 가로 방향, 지그재그, 그리드 등.
+        val layoutManager3 = LinearLayoutManager(this@Ch11MainRecyclerView1Activity)
+        layoutManager3.orientation = LinearLayoutManager.HORIZONTAL
+        binding.ch11RecyclerSample3.layoutManager = layoutManager3
+
+        // 어댑터 붙이기.
+        binding.ch11RecyclerSample3.adapter = Ch11MyAdapterSample3(datas3)
+
 
     } //onCreate
 }

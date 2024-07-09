@@ -47,6 +47,14 @@
                 android:background="@color/main_text_color"
                 style="@style/MyTextStyle"/>
 
+            <!--            리사이클러뷰3 넣기. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ch11RecyclerSample3"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+
+                />
+
         </LinearLayout>
 
     </ScrollView>
