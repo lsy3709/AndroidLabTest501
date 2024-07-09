@@ -31,16 +31,7 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
             insets
         }
 
-        //데이터 추가 및 삭제 테스트
-        //순서2
-        // 더미 데이터 만들기.
-        val testDataSet = mutableListOf<String>()
-        for (i in 0..10){
-            testDataSet.add("오늘 점심 ? 설렁탕 $i")
-        }
-
-
-        //샘플 더미 데이터 넣기.
+              //샘플 더미 데이터 넣기.
         val datas = mutableListOf<String>()
         for(i in 1..10) {
             datas.add("오늘 점심 뭐먹지 ? $i")
@@ -87,6 +78,24 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
 
         // 어댑터 붙이기.
         binding.ch11RecyclerSample3.adapter = Ch11MyAdapterSample3(datas3)
+
+
+        //4번째 리사이클러뷰 ,
+        //데이터 추가 및 삭제 테스트
+        //순서2
+        // 더미 데이터 만들기.
+        val testDataSet = mutableListOf<String>()
+        for (i in 0..10){
+            testDataSet.add("오늘 점심 ? 설렁탕 $i")
+        }
+
+        // 3번째 리사이클러뷰 재사용. 어댑터 , 뷰홀더 , 목록의요소도 재사용
+        val layoutManager4 = LinearLayoutManager(this@Ch11MainRecyclerView1Activity)
+        layoutManager4.orientation = LinearLayoutManager.VERTICAL
+        binding.ch11RecyclerSample4.layoutManager = layoutManager4
+
+        // 어댑터 붙이기.
+        binding.ch11RecyclerSample4.adapter = Ch11MyAdapterSample3(testDataSet)
 
 
     } //onCreate

@@ -55,6 +55,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="여기는 리사이클러뷰 영역이 아닙니다.2 "
+                android:background="@color/main_text_color"
+                style="@style/MyTextStyle"/>
+
+            <!--            리사이클러뷰4 , 데이터 추가 및 삭제 확인. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ch11RecyclerSample4"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+
+            <Button
+                android:id="@+id/ch11recyclerDataAddBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="아이템 추가"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/ch11recyclerDataRemoveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="아이템 삭제"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+
         </LinearLayout>
 
     </ScrollView>
