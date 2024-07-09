@@ -1,11 +1,14 @@
 package com.busanit501.androidlabtest501.ch11_jetpack.recyclerview.test1simple
 
 import android.os.Bundle
+import android.widget.GridLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.busanit501.androidlabtest501.R
 import com.busanit501.androidlabtest501.ch3_4_5.data
 import com.busanit501.androidlabtest501.databinding.ActivityCh11MainRecyclerView1Binding
@@ -115,6 +118,16 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
                 customAdapter.removeItem(position)
             }
         }
+
+        // 5번째 리사이클러뷰
+        // 3번째 리사이클러뷰 재사용. 어댑터 , 뷰홀더 , 목록의요소도 재사용
+        val layoutManager5 = GridLayoutManager(this@Ch11MainRecyclerView1Activity
+        ,2, GridLayoutManager.HORIZONTAL,false)
+        binding.ch11RecyclerSample5.layoutManager = layoutManager5
+
+        // 어댑터 붙이기.
+        val customAdapter2 = Ch11MyAdapterSample3(testDataSet)
+        binding.ch11RecyclerSample5.adapter = customAdapter2
 
 
     } //onCreate
