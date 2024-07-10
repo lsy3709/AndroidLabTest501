@@ -22,5 +22,16 @@ class Ch11Viewpager2TestFragmentMainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
+
+        //더미 데이터 만들기.
+        val testData = mutableListOf<String>()
+        for (i in 0..2) {
+            testData.add("오늘 점심은 뭐 먹나요? $i")
+        }
+
+        // 뷰페이져의 속성에 어댑터 속성 연결하기.
+        binding.ch11vierpagerTest1.adapter = MyViewpagerFragmentAdapter(this)
+
+
+    } //onCreate
 }
