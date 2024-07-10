@@ -159,5 +159,18 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         binding.ch11RecyclerSample6.adapter = customAdapter3
 
 
+        // 7번째 리사이클러뷰
+        // 3번째 리사이클러뷰 재사용. 어댑터 , 뷰홀더 , 목록의요소도 재사용
+        val layoutManager7 = LinearLayoutManager(this@Ch11MainRecyclerView1Activity)
+        layoutManager7.orientation = LinearLayoutManager.VERTICAL
+        binding.ch11RecyclerSample7.layoutManager = layoutManager7
+
+        // 어댑터 붙이기.
+        val customAdapter7 = Ch11MyAdapterSample4(datas3)
+        binding.ch11RecyclerSample7.adapter = customAdapter7
+
+
+
+
     } //onCreate
 }
