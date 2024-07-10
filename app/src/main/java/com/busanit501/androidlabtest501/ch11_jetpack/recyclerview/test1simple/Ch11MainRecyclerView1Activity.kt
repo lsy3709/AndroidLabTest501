@@ -169,6 +169,8 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         val customAdapter7 = Ch11MyAdapterSample4(datas3)
         binding.ch11RecyclerSample7.adapter = customAdapter7
 
+        // 데코레이션 옵션 붙이기 작업.
+        binding.ch11RecyclerSample7.addItemDecoration(MyDecoration(this@Ch11MainRecyclerView1Activity))
 
 
 
