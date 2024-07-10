@@ -33,5 +33,8 @@ class Ch11Viewpager2TestFragmentMainActivity : AppCompatActivity() {
         binding.ch11vierpagerTest1.adapter = MyViewpagerFragmentAdapter(this)
 
 
+        //2번째 뷰페이져 붙이기
+        binding.ch11vierpagerTest2.adapter = MyViewpagerFragmentAdapter2(this)
+
     } //onCreate
 }

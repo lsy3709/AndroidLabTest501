@@ -22,6 +22,19 @@
                 android:id="@+id/ch11vierpagerTest1"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2번 뷰페이저,이미지 슬라이더 효과"
+                style="@style/MyTextStyle"
+                android:background="@color/main_text_color"/>
+
+
+            <!--            뷰페이저 테스트 2-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/ch11vierpagerTest2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
 
 
         </LinearLayout>
