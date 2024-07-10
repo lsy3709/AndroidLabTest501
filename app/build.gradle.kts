@@ -43,6 +43,16 @@ dependencies {
 
     //뷰페이져2 추가
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    // 코루틴 추가
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'")
+    //glide 추가
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+    //retrofit 추가, gson 컨버터 추가.
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+// json 변환하기 위한 또라이브러리, gson 예시.
+    implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
