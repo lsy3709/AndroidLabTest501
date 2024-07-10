@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.busanit501.androidlabtest501.R
 import com.busanit501.androidlabtest501.ch3_4_5.data
 import com.busanit501.androidlabtest501.databinding.ActivityCh11MainRecyclerView1Binding
@@ -128,6 +129,34 @@ class Ch11MainRecyclerView1Activity : AppCompatActivity() {
         // 어댑터 붙이기.
         val customAdapter2 = Ch11MyAdapterSample4(datas3)
         binding.ch11RecyclerSample5.adapter = customAdapter2
+
+        // 6번째 리사이클러뷰
+        // 3번째 리사이클러뷰 재사용. 어댑터 , 뷰홀더 , 목록의요소도 재사용
+        val layoutManager6 = StaggeredGridLayoutManager(
+            2,
+            StaggeredGridLayoutManager.VERTICAL
+            )
+        binding.ch11RecyclerSample6.layoutManager = layoutManager6
+
+        // 3번째 리사이클러뷰
+        val datas4 = mutableListOf<String>()
+        for(i in 1..10) {
+            if(i % 3 == 0) {
+                datas4.add("오늘 점심 뭐먹지2 =================================================? $i")
+            }
+            else if (i % 3 == 1) {
+                datas4.add("오늘 점심 뭐먹지2====== ? $i")
+            }
+
+            else if (i % 3 == 2) {
+                datas4.add("오늘 점심 뭐먹지2================================================= ? $i")
+            }
+//            datas4.add("오늘 점심 뭐먹지2 ? $i")
+        }
+
+        // 어댑터 붙이기.
+        val customAdapter3 = Ch11MyAdapterSample4(datas4)
+        binding.ch11RecyclerSample6.adapter = customAdapter3
 
 
     } //onCreate

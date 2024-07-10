@@ -100,6 +100,28 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="여기는 리사이클러뷰 영역이 아닙니다.2 "
+                android:background="@color/main_text_color"
+                style="@style/MyTextStyle"/>
+
+            <!--            리사이클러뷰6 , 지그재그 레이아웃. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ch11RecyclerSample6"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="여기는 리사이클러뷰 영역이 아닙니다.2 "
+                android:background="@color/main_text_color"
+                style="@style/MyTextStyle"/>
+
 
         </LinearLayout>
 
