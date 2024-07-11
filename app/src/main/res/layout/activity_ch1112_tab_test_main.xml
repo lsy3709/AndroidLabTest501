@@ -18,11 +18,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
+<!--    뷰페이저 안에서, 프래그먼트 들이 교체되어서 출력 될 예정.-->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/ch11_12_Tab_viewpager1"
         android:layout_width="match_parent"
-        android:layout_height="680dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="630dp"
+        app:layout_constraintTop_toBottomOf="@+id/tabTest_toolbar"
+        />
+
+<!--    툴바를 상단에 추가 가능.-->
+    <include
+        android:id="@+id/tabTest_toolbar"
+        layout="@layout/toolbar_main_layout"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
