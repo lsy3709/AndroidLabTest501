@@ -122,7 +122,7 @@ import com.busanit501.androidlabtest501.databinding.ActivityTestIntentBinding
                 // 현재, 지도 관련 앱이 다양하게 없어서, 아마도 기본 앱: 구글 맵이 나옴.
                 // 만약, 지도 관련 앱이 여러 개 있다면, 특정 앱을 선택이 가능함.
                 // 사용하는 앱의 패키지명을 정확히 입력함.
-                intent.setPackage("com.google.android.apps.maps")
+//                intent.setPackage("com.google.android.apps.maps")
                 startActivity(intent)
 
             }
