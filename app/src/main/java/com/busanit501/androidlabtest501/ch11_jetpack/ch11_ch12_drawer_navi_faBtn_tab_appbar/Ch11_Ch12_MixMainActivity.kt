@@ -98,6 +98,7 @@ class Ch11_Ch12_MixMainActivity : AppCompatActivity() {
 
         //뷰페이저2 준비물 1)프래그먼트 어댑터 2) 목록요소 , 프래그먼트 3개 필요. 3) 더미 데이터(=자기자신)
         binding.viewPager1.adapter =ViewPageAdapterTest(this)
+        binding.viewPager2.adapter =ViewPageAdapterTest(this)
 
         // 리사이클러뷰 붙이기
         // 준비물) 1) 리사이클러뷰 어댑터 2)목록요소의 아이템 뷰 3) 더미 데이터
