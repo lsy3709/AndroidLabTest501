@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ch13_intent.TestIntentActivity">
@@ -16,16 +12,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-
-
+            <EditText
+                android:id="@+id/ch13emailEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="패스워드 입력해주세요."
+                style="@style/MyTextStyle"
+                android:inputType="textPassword"/>
 
             <EditText
                 android:id="@+id/passwordEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="패스워드 입력해주세요."
-                style="@style/MyTextCss"
+                style="@style/MyTextStyle"
                 android:inputType="textPassword"/>
 
             <EditText
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="나이 입력해주세요."
-                style="@style/MyTextCss"
+                style="@style/MyTextStyle"
                 android:inputType="text"/>
 
 
@@ -78,7 +78,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/main_text_bgcolor"/>
+                android:background="@color/main_text_color"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="이메일 입력해주세요."
-                style="@style/MyTextCss"
+                style="@style/MyTextStyle"
                 android:inputType="text"
                 android:layout_gravity="center"/>
 
@@ -119,4 +119,3 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

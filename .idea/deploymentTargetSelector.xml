@@ -13,19 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Ch11FragmentSampleMainActivity">
+      <SelectionState runConfigName="TestIntentActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch11MainRecyclerView1Activity">
+      <SelectionState runConfigName="TestIntent2DetailActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch11Viewpager2TestFragmentMainActivity">
+      <SelectionState runConfigName="TestCoroutineActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch11_Ch12_MixMainActivity">
+      <SelectionState runConfigName="TestBundleActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch11_12TabTestMainActivity">
+      <SelectionState runConfigName="Ch13IntentTestMainActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

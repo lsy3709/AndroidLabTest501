@@ -17,19 +17,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            style="@style/MyTextCss"/>
+            style="@style/MyTextStyle"/>
         <TextView
             android:id="@+id/resultEmailView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            style="@style/MyTextCss"/>
+            style="@style/MyTextStyle"/>
         <TextView
             android:id="@+id/resultAgeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            style="@style/MyTextCss"/>
+            style="@style/MyTextStyle"/>
 
         <Button
             android:id="@+id/testBtn3"

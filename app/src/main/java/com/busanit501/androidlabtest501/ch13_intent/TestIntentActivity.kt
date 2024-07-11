@@ -15,7 +15,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
 import com.busanit501.androidlabtest501.databinding.ActivityTestIntentBinding
 
-class TestIntentActivity : AppCompatActivity() {
     class TestIntentActivity : AppCompatActivity() {
         // 1번 화면
         lateinit var binding: ActivityTestIntentBinding
@@ -56,7 +55,7 @@ class TestIntentActivity : AppCompatActivity() {
                 // 입력이 안된 상태로 할당이 되어 버림.
                 // 그래서, 입력 란에 입력 후, 그 시점에 있는 값을
                 // 지금 , 버튼을 눌려서 전달을 하기.
-                val email = binding.emailEdit.text.toString()
+                val email = binding.ch13emailEdit.text.toString()
                 val password = binding.passwordEdit.text.toString()
                 val age = binding.ageEdit.text.toString()
 
@@ -188,4 +187,3 @@ class TestIntentActivity : AppCompatActivity() {
 
 
     }
-}

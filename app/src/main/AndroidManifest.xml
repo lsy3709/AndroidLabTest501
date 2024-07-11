@@ -30,17 +30,20 @@
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
         <activity
+            android:name=".ch13_intent.Ch13IntentTestMainActivity"
+            android:exported="true" />
+        <activity
             android:name=".ch13_intent.TestCoroutineActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch13_intent.TestBundleActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch13_intent.TestIntent2DetailActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch13_intent.TestIntentActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ch11_jetpack.ch11_ch12_drawer_navi_faBtn_tab_appbar.tabTest.Ch11_12TabTestMainActivity"
             android:exported="true" />
