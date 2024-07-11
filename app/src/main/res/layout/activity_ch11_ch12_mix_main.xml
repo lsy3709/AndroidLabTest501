@@ -36,9 +36,8 @@
             <LinearLayout
                 android:id="@+id/ch11_12MixLinear"
                 android:layout_width="match_parent"
-                android:layout_height="700dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
 
                 tools:context=".ch11_12_Test.viewpageandrecyclerview.TestPageRecyclerActivity">
 
@@ -102,7 +101,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewTest"
                             android:layout_width="match_parent"
-                            android:layout_height="300dp"
+                            android:layout_height="500dp"
                             app:layout_behavior = "@string/appbar_scrolling_view_behavior"/>
 
                         <!--CoordinatorLayout 닫는 태그 -->
@@ -115,6 +114,7 @@
 
 
                     <androidx.viewpager2.widget.ViewPager2
+                        android:layout_marginTop="100dp"
                         android:id="@+id/viewPager1"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"/>
