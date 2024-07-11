@@ -29,9 +29,9 @@ import com.busanit501.androidlabtest501.databinding.ActivityTestIntentBinding
             val manager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             binding.showEditBtn.setOnClickListener {
                 //에디트 텍스뷰에 강제로 포커스 주기.
-                binding.emailEdit.requestFocus()
+                binding.ch13emailEdit.requestFocus()
                 // 매니져 이용해서, 소프트 키보드 보여주기 제어
-                manager.showSoftInput(binding.emailEdit, InputMethodManager.SHOW_IMPLICIT)
+                manager.showSoftInput(binding.ch13emailEdit, InputMethodManager.SHOW_IMPLICIT)
 
             }
             // hide
