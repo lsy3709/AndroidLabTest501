@@ -35,6 +35,7 @@ class TestIntent2DetailActivity : AppCompatActivity() {
 
 
         // 후처리 데이터 보내기 작업.
+        // 예) 갤러리, 사진을 선택했다. 사진을 가지고 돌아감.
         binding.testBtn3.setOnClickListener {
             // 메세지 담기
             intent.putExtra("resultData","========================2번 화면에서 데이터 가져온 값.")

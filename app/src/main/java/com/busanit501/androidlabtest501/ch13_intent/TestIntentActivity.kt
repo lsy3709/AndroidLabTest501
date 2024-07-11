@@ -154,6 +154,7 @@ import com.busanit501.androidlabtest501.databinding.ActivityTestIntentBinding
             // 넘어온 데이터는 data 에 담아져 있다.
             if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
                 val result = data?.getStringExtra("resultData")
+                binding.resultData1.text = result
                 Log.d("lsy", "넘어온 결과값 : $result")
             }
         }
