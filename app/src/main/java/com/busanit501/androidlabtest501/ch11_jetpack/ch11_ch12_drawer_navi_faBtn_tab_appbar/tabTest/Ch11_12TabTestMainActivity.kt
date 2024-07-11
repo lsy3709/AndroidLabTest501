@@ -29,7 +29,7 @@ class Ch11_12TabTestMainActivity : AppCompatActivity() {
         }
 
         // 뷰페이저 어댑터 연결 필요. 어댑터 어제 만들었던 뷰페이저용, 어댑터 재사용.
-        binding.ch1112TabViewpager1.adapter = ViewPageAdapterTest(this@Ch11_12TabTestMainActivity)
+        binding.ch1112TabViewpager1.adapter = ViewPageAdapterTest2(this@Ch11_12TabTestMainActivity)
 
         val viewPager: ViewPager2 = findViewById(R.id.ch11_12_Tab_viewpager1)
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)

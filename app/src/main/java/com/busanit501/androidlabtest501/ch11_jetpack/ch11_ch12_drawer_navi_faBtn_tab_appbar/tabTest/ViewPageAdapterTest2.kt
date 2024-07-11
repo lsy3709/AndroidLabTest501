@@ -13,7 +13,7 @@ class ViewPageAdapterTest2(fragmentActivity: FragmentActivity): FragmentStateAda
     var testFragment : List<Fragment>
 
     init {
-        testFragment = listOf(Test1Fragment(), Test2Fragment(), Test3Fragment())
+        testFragment = listOf(TabTest1Fragment(), TabTest2Fragment(), TabTest3Fragment(),TabTest4Fragment())
     }
 
     override fun getItemCount(): Int {
