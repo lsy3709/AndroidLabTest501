@@ -19,7 +19,7 @@
                 android:id="@+id/ch13emailEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="패스워드 입력해주세요."
+                android:hint="이메일 입력해주세요."
                 style="@style/MyTextStyle"
                 android:inputType="textPassword"/>
 
