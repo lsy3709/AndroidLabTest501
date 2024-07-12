@@ -34,18 +34,22 @@ class Ch16ContactMainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             if (it.resultCode == RESULT_OK) {
+                //여기에 도착했다면, 데이터는 : it.data?.data, 담아져 있다.
                 Log.d("lsy", "${it.data?.data}")
                 //실제 데이터를 불러와서, 결과뷰에 넣어보기.
                 val cursor = contentResolver.query(
                     it!!.data!!.data!!,
+                    // 불러올 데이터 항목
                     arrayOf<String>(
+                        //이름
                         ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                        // 전화번호
                         ContactsContract.CommonDataKinds.Phone.NUMBER
                     ),
                     null,
                     null,
                     null,
-                ) //cursor
+                ) //cursor, 연락처 한명의 이름과, 번호를 가지고 있다.
                 Log.d("lsy", "cursor size: ${cursor?.count}")
                 // cursor 에는 , 마치 디비에서 select 를 하는 방법과 비슷
                 if(cursor!!.moveToFirst()) {
@@ -60,7 +64,8 @@ class Ch16ContactMainActivity : AppCompatActivity() {
         //이벤트 처리
         binding.ch16ContactBtn.setOnClickListener {
             // 연락처 앱으로 접근
-            val intent = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+            val intent = Intent(Intent.ACTION_PICK,
+                ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
             // 인텐트를 전달, 시스템에게, 후처리
             requestContactsLauncher.launch(intent)
         }

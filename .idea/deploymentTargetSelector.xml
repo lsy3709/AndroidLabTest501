@@ -22,10 +22,10 @@
       <SelectionState runConfigName="TestBundleActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch13IntentTestMainActivity">
+      <SelectionState runConfigName="Ch16ContactMainActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch16ContactMainActivity">
+      <SelectionState runConfigName="Ch16TestImageActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

@@ -60,6 +60,7 @@ class Ch16TestImageActivity : AppCompatActivity() {
                 // 2) reqWidth: Int,
                 // 3) reqHeight: Int
                 val calRatio = calculateInSampleSize(
+                    // 선택된 사진 데이터
                     it.data!!.data!!,
                     // 가로 , 세로 : 150dp x 150dp
                     resources.getDimensionPixelSize(R.dimen.profile_img_width),
@@ -96,7 +97,8 @@ class Ch16TestImageActivity : AppCompatActivity() {
             //갤러리 앱 호출, 인텐트의 액션 문자열을 사용함. 시스템꺼를 사용해서 정해진 문자열.
             // Intent.ACTION_PICK : 갤러리 호출
             // MediaStore.Images.Media.EXTERNAL_CONTENT_URI : 외부 저장소(갤러리)의 사진의 위치
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            val intent = Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             // data type 지정.
             intent.type = "image/*"
             // 후처리 함수 호출 .-> 데이터 가져오기 위한 로직.
@@ -165,7 +167,10 @@ class Ch16TestImageActivity : AppCompatActivity() {
             // 매니페스트 파일에 가서,
             val photoURI : Uri = FileProvider.getUriForFile(
                 this@Ch16TestImageActivity,
-                "com.example.myapp_test_7_8_9_10_11_12.fileprovider",
+                // 암호 처럼 사용하는 패키지명 일치.
+                // 매니페스트 파일에, 프로바이더 태그에 있음.
+                //com.busanit501.androidlabtest501.fileprovider
+                "com.busanit501.androidlabtest501.fileprovider",
                 file
             )
             // 카메라를 촬영하는 정해진 액션 문자열
