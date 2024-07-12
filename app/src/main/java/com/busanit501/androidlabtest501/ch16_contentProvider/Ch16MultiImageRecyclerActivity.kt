@@ -20,7 +20,7 @@ class Ch16MultiImageRecyclerActivity : AppCompatActivity() {
     lateinit var binding : ActivityCh16MultiImageRecyclerBinding
     // 사진의 위치 Uri를 가지는 리스트를 하나 만들기.
     var list = ArrayList<Uri>()
-    var adapter = MultiImageAdapter(list,this)
+    var adapter = Ch16MultiImageAdapter(list,this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCh16MultiImageRecyclerBinding.inflate(layoutInflater)
