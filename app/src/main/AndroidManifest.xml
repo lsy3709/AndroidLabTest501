@@ -29,10 +29,12 @@
     <!-- 진동 관련 퍼미션 추가 -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
-<!--예시-->
+<!--예시 공공데이터 용 -->
     <!--        android:name=".ch18_network.retrofit.MyApplication3"-->
+    <!--예시2 룸라이브 용 -->
+<!--    android:name=".ch17_2_room.application.UserApplication"-->
     <application
-        android:name=".ch17_2_room.application.UserApplication"
+        android:name=".ch18_network.retrofit.MyApplication3"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
