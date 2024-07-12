@@ -1,7 +1,7 @@
 package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit
 
 import android.app.Application
-import com.example.myapp_test_7_8_9_10_11_12.pagingTest.INetworkServiceSpringShop
+import com.busanit501.androidlabtest501.ch18_2_pagingTest.INetworkServiceSpringShop
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

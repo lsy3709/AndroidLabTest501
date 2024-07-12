@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.busanit501.androidlabtest501.databinding.ItemRetrofit2Binding
 import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemModel
-import com.example.myapp_test_7_8_9_10_11_12.databinding.ItemRetrofit2Binding
 
 
 // 매개변수에는, 목록 요소의 뷰가 ,
