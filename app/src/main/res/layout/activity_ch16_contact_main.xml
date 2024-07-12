@@ -18,6 +18,12 @@
             android:layout_height="wrap_content"
             android:text="연락처 불러오기"
             style="@style/MyTextStyle"/>
+        <TextView
+            android:id="@+id/ch16ResultView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="불러올 연락 결과뷰"
+            style="@style/MyTextStyle"/>
 
     </LinearLayout>
 
