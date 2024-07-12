@@ -1,4 +1,4 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit
+package com.busanit501.androidlabtest501.ch18_network.retrofit
 
 import android.app.Application
 import retrofit2.Retrofit

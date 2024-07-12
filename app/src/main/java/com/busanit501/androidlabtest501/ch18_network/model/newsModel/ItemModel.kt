@@ -1,4 +1,4 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel
+package com.busanit501.androidlabtest501.ch18_network.model.newsModel
 
 // 서버에서 가져올 데이터를 모델링
 //{

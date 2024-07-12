@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.ch18_network.retrofit.MyApplication4
 import com.busanit501.androidlabtest501.databinding.ActivityPagingTestBinding
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication4
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

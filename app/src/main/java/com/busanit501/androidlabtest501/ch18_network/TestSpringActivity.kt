@@ -7,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.ch18_network.model.Blog
+import com.busanit501.androidlabtest501.ch18_network.retrofit.MyApplication4
 import com.busanit501.androidlabtest501.databinding.ActivityTestSpringBinding
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.Blog
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication4
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit
+package com.busanit501.androidlabtest501.ch18_network.retrofit
 
 import android.app.Application
 import retrofit2.Retrofit
@@ -13,9 +13,9 @@ class MyApplication2 : Application(){
 
         val QUERY = "travel"
         val QUERY2 = "Apple"
-        val from ="2023-05-22"
+        val from ="2024-06-22"
         val sortBy ="popularity"
-        val API_KEY = "87af28a1123a4fcc9c869c0b81bd243c"
+        val API_KEY = "b7adb4f936494b3bac62f446ab7686cb"
         val BASE_URL = "https://newsapi.org"
         val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
 

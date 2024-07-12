@@ -1,6 +1,5 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit
-
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.Blog
+package com.busanit501.androidlabtest501.ch18_network.retrofit
+import com.busanit501.androidlabtest501.ch18_network.model.Blog
 import retrofit2.http.GET
 
 // 통신 라이브러리 : retrofit2 이용해서,

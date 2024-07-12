@@ -8,10 +8,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.ch18_network.adapter.MyAdapterRetrofit
+import com.busanit501.androidlabtest501.ch18_network.model.UserListModel
+import com.busanit501.androidlabtest501.ch18_network.retrofit.MyApplication
 import com.busanit501.androidlabtest501.databinding.ActivityHttpTestReqResBinding
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.UserListModel
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication
+
+
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

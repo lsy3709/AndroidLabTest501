@@ -8,10 +8,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.ch18_network.adapter.MyAdapterRetrofit2
+import com.busanit501.androidlabtest501.ch18_network.model.newsModel.ItemListModel
+import com.busanit501.androidlabtest501.ch18_network.retrofit.MyApplication2
 import com.busanit501.androidlabtest501.databinding.ActivityNewsApiTestBinding
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit2
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemListModel
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication2
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,9 +42,10 @@ class NewsApiTestActivity : AppCompatActivity() {
 //            @Query("sortBy") sortBy : String,
 //            @Query("apiKey") apiKey : String,
         val QUERY2 = "Apple"
-        val from ="2023-10-10"
+        val from ="2024-06-12"
         val sortBy ="popularity"
-        val API_KEY = "fe6b8272a4ae4dcfb3fd06a5b40561ab"
+        val API_KEY = "b7adb4f936494b3bac62f446ab7686cb"
+//        https://newsapi.org/v2/everything?q=Apple&from=2024-06-12&sortBy=popularity&apiKey=b7adb4f936494b3bac62f446ab7686cb
         val userListCall = networkService.getList(QUERY2,from,sortBy,API_KEY)
 
         //변경3

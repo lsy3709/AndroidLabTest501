@@ -8,13 +8,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit501.androidlabtest501.R
+import com.busanit501.androidlabtest501.ch18_network.adapter.MyAdapterRetrofit2
+import com.busanit501.androidlabtest501.ch18_network.adapter.MyAdapterRetrofit3
+import com.busanit501.androidlabtest501.ch18_network.adapter.MyAdapterRetrofit4
+import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.ItemListModel
+import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.ItemListModel2
+import com.busanit501.androidlabtest501.ch18_network.retrofit.MyApplication3
 import com.busanit501.androidlabtest501.databinding.ActivityPublicDataTestBinding
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit2
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit3
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.adapter.MyAdapterRetrofit4
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.PublicModel.ItemListModel
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.PublicModel.ItemListModel2
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit.MyApplication3
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -277,18 +277,18 @@ class PublicDataTestActivity : AppCompatActivity() {
 
 
             val QUERY2 = "Apple"
-            val from ="2023-12-20"
+            val from ="2024-06-12"
             val sortBy ="popularity"
-            val API_KEY = "fe6b8272a4ae4dcfb3fd06a5b40561ab"
+            val API_KEY = "b7adb4f936494b3bac62f446ab7686cb"
             val userListCall = networkService.getList(QUERY2,from,sortBy,API_KEY)
 
             //변경3
             // 실제 통신이 시작이 되는 부분, 이 함수를 통해서 데이터를 받아옴.
-            userListCall.enqueue(object : Callback<com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemListModel> {
+            userListCall.enqueue(object : Callback<com.busanit501.androidlabtest501.ch18_network.model.newsModel.ItemListModel> {
                 //익명 클래스가, Callback , 레트로핏2에서 제공하는 인터페이스를 구현했고,
                 // 반드시 재정의해야하는 함수들이 있음.
                 // 변경4
-                override fun onResponse(call: Call<com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemListModel>, response: Response<com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemListModel>) {
+                override fun onResponse(call: Call<com.busanit501.androidlabtest501.ch18_network.model.newsModel.ItemListModel>, response: Response<com.busanit501.androidlabtest501.ch18_network.model.newsModel.ItemListModel>) {
                     // 데이터를 성공적으로 받았을 때 수행되는 함수
                     val userList = response.body()
                     // 변경8
@@ -314,7 +314,7 @@ class PublicDataTestActivity : AppCompatActivity() {
                 }
 
                 //변경5
-                override fun onFailure(call: Call<com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.newsModel.ItemListModel>, t: Throwable) {
+                override fun onFailure(call: Call<com.busanit501.androidlabtest501.ch18_network.model.newsModel.ItemListModel>, t: Throwable) {
 
                     // 데이터를 못 받았을 때 수행되는 함수
                     call.cancel()

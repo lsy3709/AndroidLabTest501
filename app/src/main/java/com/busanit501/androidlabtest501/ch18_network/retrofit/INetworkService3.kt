@@ -1,7 +1,7 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.retrofit
+package com.busanit501.androidlabtest501.ch18_network.retrofit
 
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.PublicModel.ItemListModel
-import com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model.PublicModel.ItemListModel2
+import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.ItemListModel
+import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.ItemListModel2
 import retrofit2.http.GET
 import retrofit2.http.Query
 

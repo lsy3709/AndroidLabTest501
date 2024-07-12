@@ -1,4 +1,4 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model
+package com.busanit501.androidlabtest501.ch18_network.model
 
 // data 값의 배열에 요소를 모델링 : UserModel
 // UserModel 를 요소로 갖는 리스트 만들기 -> 모델화

@@ -13,19 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="TestIntentActivity">
+      <SelectionState runConfigName="DbTestActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="TestCoroutineActivity">
+      <SelectionState runConfigName="SharedPreferTestActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch16ContactMainActivity">
+      <SelectionState runConfigName="HttpTestReqResActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch16TestImageActivity">
+      <SelectionState runConfigName="NewsApiTestActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Ch16ImageLoadTestMainActivity">
+      <SelectionState runConfigName="PublicDataTestActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

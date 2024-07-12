@@ -1,4 +1,4 @@
-package com.example.myapp_test_7_8_9_10_11_12.ch18_Test.model
+package com.busanit501.androidlabtest501.ch18_network.model
 
 // 가져오는 데이터 타입 조사
 // 샘플 데이터
