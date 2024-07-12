@@ -13,7 +13,7 @@ interface UserDao {
     @Insert
     suspend fun insert(user: User)
 
-    @Query("SELECT * FROM user_table ORDER BY name ASC")
+    @Query("SELECT * FROM user_table ORDER BY id DESC")
     fun getAllUsers(): LiveData<List<User>>
 
     @Update
