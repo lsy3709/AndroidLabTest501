@@ -56,7 +56,7 @@ class Ch17RoomMainActivity : AppCompatActivity() {
             userViewModel.delete(User(id = id, name = "", age = 0))
         }
         // 예시로 데이터 삽입
-        userViewModel.insert(User(name = "John Doe", age = 25))
+//        userViewModel.insert(User(name = "John Doe", age = 25))
     } // onCreate
 
 }
