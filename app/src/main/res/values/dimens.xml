@@ -4,5 +4,6 @@
     <dimen name="Main_Title_size" >30sp</dimen>
     <dimen name="Para_Title_size" >15sp</dimen>
     <dimen name="profile_Img_width" >150dp</dimen>
-
+    <dimen name="profile_img_width">150dp</dimen>
+    <dimen name="profile_img_height">150dp</dimen>
 </resources>
