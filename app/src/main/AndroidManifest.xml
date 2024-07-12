@@ -29,8 +29,10 @@
     <!-- 진동 관련 퍼미션 추가 -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
+<!--예시-->
+    <!--        android:name=".ch18_network.retrofit.MyApplication3"-->
     <application
-        android:name=".ch18_network.retrofit.MyApplication3"
+        android:name=".ch17_2_room.application.UserApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -40,6 +42,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
+        <activity
+            android:name=".ch17_2_room.Ch17RoomMainActivity"
+            android:exported="true" />
         <activity
             android:name=".ch18_2_pagingTest.PagingTestActivity"
             android:exported="true" />
