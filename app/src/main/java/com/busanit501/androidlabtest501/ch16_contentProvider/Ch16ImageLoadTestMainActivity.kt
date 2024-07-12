@@ -193,7 +193,13 @@ class Ch16ImageLoadTestMainActivity : AppCompatActivity() {
         //지도앱 호출
         binding.ch16MapBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW,
-                Uri.parse("geo:37.5662952, 126.9779451"))
+                Uri.parse("geo:35.156068, 129.059408"))
+            startActivity(intent)
+        }
+        // 전화 앱 호출
+        binding.ch16ContactBtn.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW,
+                Uri.parse("tel:+82 010-7661-3709"))
             startActivity(intent)
         }
 

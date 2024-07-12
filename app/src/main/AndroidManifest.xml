@@ -3,9 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.busanit501.androidlabtest501">
     <!-- 퍼미션 관련 설정 예 -->
+<!--    전화 앱 퍼미션-->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 미디어 정보 접근을 위한 퍼미션 변경 공식 문서 -->
+    <!--    전화 앱 퍼미션-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <!-- 연락처 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 외부 저장소 접근 권한 -->
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 외부 통신 하기위해서 인터넷 퍼미션 추가 -->
