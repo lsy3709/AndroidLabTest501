@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ch18_network.PublicDataTestActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--텍스트뷰, 리사이클러뷰 붙이기 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="부산광역시_부산도보여행정보 서비스"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <!--리사이클러뷰 먼저 붙이기-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/retrofitRecyclerView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!--텍스트뷰, 리사이클러뷰 붙이기-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="부산광역시_부산맛집정보 서비스"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <!--리사이클러뷰 먼저 붙이기-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/retrofitRecyclerView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--텍스트뷰, 리사이클러뷰 붙이기-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="뉴스 API "
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <!--리사이클러뷰 먼저 붙이기-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/retrofitRecyclerView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
