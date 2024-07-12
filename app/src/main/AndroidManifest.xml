@@ -2,10 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.busanit501.androidlabtest501">
+
     <!-- 퍼미션 관련 설정 예 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 미디어 정보 접근을 위한 퍼미션 변경 공식 문서 -->
+<!--    연락처-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+<!--    이미지 저장소 접근 권한-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<!--    외부 저장소 접근 권한-->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 외부 통신 하기위해서 인터넷 퍼미션 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- https://developer.android.com/about/versions/14/changes/partial-photo-video-access?hl=ko -->
     <!-- Devices running Android 12L (API level 32) or lower -->
     <!-- 알림 채널 관련 퍼미션 설정 -->
@@ -30,7 +38,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
         tools:targetApi="31">
-
+        <provider
+            android:name=".ch16_contentProvider.MyContentProvider"
+            android:authorities="com.busanit501.androidlabtest5"
+            android:enabled="true"
+            android:exported="true"></provider>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.busanit501.androidlabtest501.fileprovider"
@@ -48,7 +60,6 @@
         <activity
             android:name=".ch16_contentProvider.Ch16TestImageActivity"
             android:exported="false" />
-
         <activity
             android:name=".ch13_intent.TestCoroutineActivity"
             android:exported="true" />
