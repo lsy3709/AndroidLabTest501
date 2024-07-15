@@ -32,6 +32,8 @@ class SharedPrefDetailTestActivity : AppCompatActivity() {
             val password2 = pref.getString("password2", "Default PASSWORD")
             val email3 = pref.getString("email3", "Default EMAIL")
             val password3 = pref.getString("password3", "Default PASSWORD")
+            // 조회 버튼 누르면 공유된 프리퍼런스 파일에 저장된 값 가져오기,
+
 
             // 결과 뷰에 데이터 넣기.
             binding.resultEmailSP.text = email

@@ -37,15 +37,18 @@ class SharedPreferTestActivity : AppCompatActivity() {
             // 공유프리퍼런스 값 넣기. 저장.
             val pref = getSharedPreferences("userInfo", MODE_PRIVATE)
             val editor = pref.edit()
+
             editor.putString("email",email)
             editor.putString("password",password)
             // 값 넣기.
             editor.putString("pickRadio",pickRadio)
-            editor.putString("email2",email)
-            editor.putString("password2",password)
-            editor.putString("email3",email)
-            editor.putString("password3",password)
+
+//            editor.putString("email2",email)
+//            editor.putString("password2",password)
+//            editor.putString("email3",email)
+//            editor.putString("password3",password)
             editor.commit()
+            // 공유프리퍼런스 값 넣기. 저장.
 
             //2번 화면으로 이동.
             val intent = Intent(this,SharedPrefDetailTestActivity::class.java)

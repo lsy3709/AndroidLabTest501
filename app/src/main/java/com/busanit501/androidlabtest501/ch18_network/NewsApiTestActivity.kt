@@ -42,7 +42,7 @@ class NewsApiTestActivity : AppCompatActivity() {
 //            @Query("sortBy") sortBy : String,
 //            @Query("apiKey") apiKey : String,
         val QUERY2 = "Apple"
-        val from ="2024-06-12"
+        val from ="2024-06-15"
         val sortBy ="popularity"
         val API_KEY = "b7adb4f936494b3bac62f446ab7686cb"
 //        https://newsapi.org/v2/everything?q=Apple&from=2024-06-12&sortBy=popularity&apiKey=b7adb4f936494b3bac62f446ab7686cb

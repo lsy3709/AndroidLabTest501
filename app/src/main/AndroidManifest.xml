@@ -34,7 +34,7 @@
     <!--예시2 룸라이브 용 -->
 <!--    android:name=".ch17_2_room.application.UserApplication"-->
     <application
-        android:name=".ch18_network.retrofit.MyApplication3"
+        android:name=".ch18_network.retrofit.MyApplication2"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
