@@ -13,28 +13,10 @@ class MyApplication5 : Application(){
 
         val BASE_URL = "https://apis.data.go.kr/6260000/"
 
-        val BASE_URL2 = "https://newsapi.org"
-
-
-
-        //add....................................
+                //add....................................
         var networkService5: INetworkService5
 
-        var networkService: INetworkService3
 
-        var networkService2: INetworkService2
-
-        val retrofit: Retrofit
-            get() = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-
-        val retrofit2: Retrofit
-        get() = Retrofit.Builder()
-            .baseUrl(BASE_URL2)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
 
     val retrofit5: Retrofit
         get() = Retrofit.Builder()
@@ -43,8 +25,6 @@ class MyApplication5 : Application(){
             .build()
 
         init {
-            networkService = retrofit.create(INetworkService3::class.java)
-            networkService2 = retrofit2.create(INetworkService2::class.java)
             networkService5 = retrofit5.create(INetworkService5::class.java)
         }
 
