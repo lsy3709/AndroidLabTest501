@@ -19,6 +19,14 @@
             android:layout_height="wrap_content"
             android:text="Pick Image"
             android:onClick="pickImage"/>
+
+        <TextView
+            android:id="@+id/ch18_predicted_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="예측 결과"
+            style="@style/MyTextStyle"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

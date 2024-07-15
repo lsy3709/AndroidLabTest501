@@ -6,7 +6,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "http://localhost:8000/"  // Replace with your server URL
+//    작업시, 장고에서, 해당 아이피 허용하고, 여기서 내부 네트워크로 테스트시 , 로컬호스트 또는 루프백 주소 외에
+//    현재 사용중인 네트워크로 사용하기. 예) 192.168.219.200
+    private const val BASE_URL = "http://192.168.219.200:8000/"  // Replace with your server URL
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

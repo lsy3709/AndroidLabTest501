@@ -16,18 +16,19 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 외부 저장소 접근 권한 -->
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 외부 통신 하기위해서 인터넷 퍼미션 추가 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- https://developer.android.com/about/versions/14/changes/partial-photo-video-access?hl=ko -->
+
     <!-- Devices running Android 12L (API level 32) or lower -->
     <!-- 알림 채널 관련 퍼미션 설정 -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" /> <!-- Devices running Android 13 (API level 33) or higher -->
+        android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Devices running Android 13 (API level 33) or higher -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- <uses-permission android:name="android.permission.BATTERY_STATS"/> -->
     <!-- 진동 관련 퍼미션 추가 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+
 
     <application
         android:name=".ch18_network.retrofit.MyApplication5"
@@ -39,6 +40,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLabTest501"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
         <activity
             android:name=".ch18_3_pytorch_rest_test.Ch18PytorchDrfTestMainActivity"
