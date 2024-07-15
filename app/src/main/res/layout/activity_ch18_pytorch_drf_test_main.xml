@@ -20,6 +20,15 @@
             android:text="Pick Image"
             android:onClick="pickImage"/>
 
+        <ImageView
+            android:id="@+id/selectedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Selected Image"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+
         <TextView
             android:id="@+id/ch18_predicted_result"
             android:layout_width="match_parent"

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,8 @@ import java.io.IOException
 
 class Ch18PytorchDrfTestMainActivity : AppCompatActivity() {
     lateinit var binding: ActivityCh18PytorchDrfTestMainBinding
+    private lateinit var selectedImageView: ImageView
+
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
     }
@@ -41,6 +44,8 @@ class Ch18PytorchDrfTestMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityCh18PytorchDrfTestMainBinding.inflate(layoutInflater)
+        selectedImageView = binding.selectedImageView
+
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -60,7 +65,15 @@ class Ch18PytorchDrfTestMainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
             val imageUri: Uri = data.data!!
-            processImage(imageUri)
+
+            try {
+                val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+                selectedImageView.setImageBitmap(bitmap)
+                selectedImageView.visibility = View.VISIBLE
+                processImage(imageUri)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
     }
 
