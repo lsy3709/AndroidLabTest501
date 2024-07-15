@@ -6,5 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ch18_network.PriceMainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--텍스트뷰, 리사이클러뷰 붙이기 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="부산착한 가격업소 조회 서비스"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <!--리사이클러뷰 먼저 붙이기-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/retrofitRecyclerView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

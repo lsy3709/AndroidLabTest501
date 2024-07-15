@@ -1,8 +1,5 @@
 package com.busanit501.androidlabtest501.ch18_network.model.publicmodel2
 
-import com.busanit501.androidlabtest501.ch18_2_pagingTest.Items
-import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.GetWalkingKr
-
 
 // 받아온 데이터 형식을 보고 정해야함.
 // 중요함.

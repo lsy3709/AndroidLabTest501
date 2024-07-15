@@ -1,21 +1,20 @@
 package com.busanit501.androidlabtest501.ch18_network.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.busanit501.androidlabtest501.ch18_network.model.PublicModel.ItemModel2
-
+import com.busanit501.androidlabtest501.ch18_network.model.publicmodel2.PriceModel
 import com.busanit501.androidlabtest501.databinding.ItemRetrofit2Binding
-
-
+import com.busanit501.androidlabtest501.databinding.ItemRetrofit5Binding
 
 
 // 매개변수에는, 목록 요소의 뷰가 ,
 // 이름 : item_retrofit.xml
 // 왼쪽 : 이미지 하나, 오르쪽에 : 세로 방향으로 텍스뷰 3개정도.
-class MyViewHolderRetrofit3 (val binding: ItemRetrofit2Binding)
+class MyViewHolderRetrofit5 (val binding: ItemRetrofit5Binding)
     : RecyclerView.ViewHolder(binding.root)
 
 // 리사이클러뷰 준비물 1) 어댑터 2) 뷰홀더 3) 목록 요소의 뷰 4) 데이터
@@ -25,7 +24,7 @@ class MyViewHolderRetrofit3 (val binding: ItemRetrofit2Binding)
 // val context : Context, val datas : List<UserModel>? ,
 // 변수에 타입을 val, var 지정하면, 클래스 내에 전역으로 사용 가능.
 // 그래서, 밑에 특정 함수 내부에서, datas를 쉽게 접근 및 사용이 가능.
-class MyAdapterRetrofit3(val context: Context, val datas: List<ItemModel2>?)
+class MyAdapterRetrofit5(val context: Context, val datas: List<PriceModel>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
 
@@ -36,8 +35,8 @@ class MyAdapterRetrofit3(val context: Context, val datas: List<ItemModel2>?)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
     : RecyclerView.ViewHolder {
         // 목록 요소를 해당 어댑터에 적용한다.
-        return MyViewHolderRetrofit3(
-            ItemRetrofit2Binding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return MyViewHolderRetrofit5(
+            ItemRetrofit5Binding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     // 이코드 그대로 통으로 재사용.
@@ -51,23 +50,27 @@ class MyAdapterRetrofit3(val context: Context, val datas: List<ItemModel2>?)
     // 실제로 해당 뷰에, 데이터를 연결하는 부분.
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         // 내부에서 뷰 작업 쉽게 할려고, 뷰 홀더로 형변환 후, 바인딩 재할당.
-        val binding = (holder as MyViewHolderRetrofit3).binding
+        val binding = (holder as MyViewHolderRetrofit5).binding
 
         // datas 에 담겨진 모델을 하나씩 꺼내서 , 뷰에 데이터를 붙이는 작업.
         // 리스트의 각요소마다 하나씩 꺼내어, 임의의 user 변수에 담기.
         val item = datas?.get(position)
         // 뷰에 데이터 내용 붙이기. 1) 일반 텍스트 먼저 붙이기.
-        binding.retrofitTitleView.text = item?.TITLE
-        binding.retrofitContentView.text = item?.MAIN_TITLE
+        binding.retrofitNameView5.text = item?.mNm
+        binding.retrofitAddressView5.text = item?.adres
+        binding.retrofitTelView5.text =item?.tel
+        val imgurl : String = "https://" + item?.imgFile1
+        Log.d("lsy","이미지 주소 확인 : ${item?.imgFile1}")
+        Log.d("lsy","이미지 주소 확인2 : ${imgurl}")
 
 
         // glide 통해서, 이미지 를 직접 가져와서 처리하는 부분.
         //방법2)
         Glide.with(context)
             //load 실제 URL 주소 직접 넣기.
-            .load(item?.MAIN_IMG_NORMAL)
+            .load(imgurl)
             .override(700,300)
-            .into(binding.retrofitProfileImg2)
+            .into(binding.retrofitPriceImg5)
     }
 
 }
